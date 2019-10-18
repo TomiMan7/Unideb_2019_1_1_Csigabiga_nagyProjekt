@@ -1,0 +1,52 @@
+Követelmény specifikáció
+The Snail Sale
+1. Vezetõi összefoglaló
+	Megbízzük Önöket, hogy hozzanak létre egy, áruk és egyéb tárgyak továb
+badására használható, szolgáló, online(opcionálisan offline) adatbázishoz
+csatlakozó, applikációt.
+    Az applikáció elsõdleges célja és feladata, a vásárlók által keresett
+termékek megjelenítése, és lehetõség biztosítása a megkeresett és kiválasztott
+árucikkek megvásárlására. Keresési lehetõséggel rendelkezzen, minden az
+applikációval rendelkezõ személy. Vásárláshoz, csak és kizárólag regisztrált
+felhasználóknak legyenek jogaik. Így a programban legyen lehetõség a
+bejelentkezésre,illetve a termékek közötti keresésre, illetve a regisztrációra.
+	Keresni legalább név, érték, valamint név és érték alapján lehessen az
+adatbázisban szereplõ termékek között. A keresõ felület a fõoldalon mindig
+legyen látható, a megkeresett és megjelenített termékektõl balra, egy kis
+oszlopban elhelyezve, ahol a keresési lehetõségek legyenek láthatóak.
+	Az ablak közepén legyen látható a felhasználó által kikeresett
+termék, illetve a termékrõl az adatbázisban tárolt információk.
+	A megjelenített árucikktõl jobbra, legyen elhelyezve a vásárlást megkezdõ
+gomb ami megjeleníti az ehhez szükséges felületet.
+	Jobb oldalt legyen elhelyezve egy esetlegesen a késõbbi verziókba tervezett,
+termék értékelõ, ahol csak és kizárólag a regisztrált felhasználók, egytõl ötig
+tudják értékelni az adott terméket.
+	Mind jobb és bal oldalt a felhasználói felület alatt legyen hely, esetleges
+reklámfelületnek, egy-egy kép formájában. Ide a képek majd késõbb kerülnek
+elhelyezésre,miután megvásárolták a reklámfelületeket.
+	A regisztrációs felületen, kell hogy legyen lehetõsége a felhasználónak
+beírnia a kívánt, de egyedi felhasználónevét, és jelszavát. A jelszó ne legyen
+látható a beíráskor, illetve titkosítva kell, hogy legyenek eltárolva az adatbázisban.
+	A bejelentkezési felületen, legyen lehetõsége felhasználónak beírnia a
+saját és helyes felhasználónevét, és az ehhez tartozó jelszavát. A jelszó ne
+legyen látható a beíráskor.
+	Vásárlás esetén a felhasználó lássa melyik terméket választotta ki
+megvásárlásra, annak minden adatával együtt.
+A vásárláshoz szükséges adatok: név, lakcím, telefonszám, fizetési módszer.
+A kért adatok beírása után legyen lehetõség ezeknek az ellenõrzésére,
+és miután a vásárló mindent rendben talált, legyen elmentve a rendelés
+az adatbázisba. A rendelés rögítése után a vásárló kapjon egy a csomag
+követéséhez használható kódot, ami legyen a vásárlás mellé rögzítve 
+az adatbázisban is.
+	Az adatbázisban tárolandó adatok a termékekrõl: név, érték, esetleges
+	 lejárati idõ, eladó neve, készleten levõ mennyiség, kategória.
+	Az adatbázisban tárolandó adatok a felhasználókról:felhasználónév,
+	titkosított jelszó, id.
+	Az adatbázisban tárolandó adatok a vásárlásról:vásárló neve,
+	felhasználó neve, lakcím, telefonszám, e-mail cím, vásárlás
+	azonosítására alkalmas azonosító, vásárolt termék(ek).
+	Az adatbázis tartalma még változhat!
+2. Jelenlegi helyzet
+3. Vágyálom rendszer
+4. Jelenlegi üzleti folyamatok
+5. Igényelt üzleti folyamatok
