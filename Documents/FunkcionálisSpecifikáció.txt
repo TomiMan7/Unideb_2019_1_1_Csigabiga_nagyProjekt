@@ -1,0 +1,39 @@
+Funkcionális Specifikáció
+The Snail Sale
+1.Vezetõi összefoglaló
+	Az applikáció széles körû felhasználásának a támogatására Java 
+programozási nyelvet fogunk használni, így a programot, a felhasználók 
+platformtól, illetve operációs rendszertõl függetlenül fogják tudni 
+igénybe venni. Igyekszünk a grafikus tervezésnél figyelembe venni, 
+az egyszerû keresési lehetõségek biztosítását, a vásárlók felhasználási 
+élmenyének fokozására. Ennek érdekében, egyszerû gombok vezérlésével 
+tudják kiválasztani, hogy hogyan kívánnak keresni a megvásárolható 
+termékek között.
+	Természetesen a felhasználók szemszögébõl a legnagyobb figyelmet
+ a termékek kapják, így azok az applikáció ablakának közepén fognak 
+elhelyezkedni a keresési opciók mellett. A termékek megjelenítése 
+esetlegesen képpel, és pontokba szedett leírással fog történni, 
+megfelelõen látható árazással kiegészítve.
+	A keresõ felület jobb oldalára tervezett gombbal fogják 
+tudni megindítani a vásárlást a felhasználók, csak is akkor ha 
+regisztráltak, illetve be is jelentkeztek az applikációba.
+	A regisztrált felhasználók, a termékek és a megkezdett vásárlásokról
+ a kívánt adatokat adatbázisban fogjuk tárolni. Ehhez egy phpmyadmin felületet
+ fogunk biztosítani.
+Külön adatbázis tábla fog szolgálni a regisztrált felhasználók, a termékek,
+ illetve a megkezdett vásárlások tárolására.
+	A regisztrált felhasználók adatinak védelmére is jelentõs figyelmet 
+fogunk fordítani, így minden kényes információt titkosítva fogunk tárolni 
+az adatbázisban. Az adatok bevitelénél természetesen olvashatatlan 
+formátumban lesz megjelenítve az efféle információ, azaz ki lesz 
+pontozva a beviteli mezõkben.
+	A vásárlás megkezdése után a felhasználnak lehetõsége lesz beírnia a termék
+ kiszállításához szükséges információit amiket a GDPR-nak megfelelõen 
+fogunk kezelni. Továbbá lehetõsége lesz egy hírlevélre is feliratkoznia
+ amennyiben úgy kívánja, ez nem lesz feltétele a vásárlás befejezésének.
+ A kívánt adatok bevitele után a program rögzíti a rendelést az adatbázisba,
+ és átadja a csomag követéséhez szükséges kódot a felhasználónak.
+2.Jelenlegi helyzet
+3.Vágyálom rendszer
+4.Jelenlegi üzleti folyamatok
+5.Igényelt üzleti folyamatok
