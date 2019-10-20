@@ -72,5 +72,24 @@ körbeírni az árukkal kapcsolatos információkat.
 (pl.: mennyi van belõle)
 
 3. Vágyálom rendszer
+
+A szoftvernek az alapvetõ funkciókon felül, mint a regisztráció, 
+bejelentkezés és keresés, rendelkezhetne tematikus felhasználói felülettel, 
+ami illik a szoftver témájához. Regisztációkor automatikusan küldjön 
+egy visszaigazoló emailt, ha sikeres a regisztráció.  Bejelentkezésnél 
+idõhöz legyen kötve a bejelentkezési idõ, például 10 perc álljon a felhasználó 
+rendelkezésére, ha nem használja a szoftvert és utána automatikusan 
+lépjen ki a felhasználói profilból. Egyszeri vásárlás esetén, lehessen 
+regisztráció nélkül is rendelni, viszont az adatokat ne mentse el, hanem 
+automatikusan törölje. Legyen felhasználóbarát felület , könnyen kezelhetõ, 
+a késõbbiekben lehetne olyanoknak is ,akik valamilyen testi fogyatékossággal élnek
+(például: diktálás, nagyobb betûméret stb.). A termékek legyenek kategorizálva. 
+Rendelésnél lehessen kosárba rakni  a termékeket, majd visszaugrani anélkül, 
+hogy törlõdjön a kosárból. Továbbá több dolgot is tudjon a vásárló a kosarába 
+rakni. A rendelés meneteálljon több fázisból (pl. 5-bõl). Igény szerint 
+lehessen látni, hogy melyik csiga tartozékból és termékbõl, a mennyiséget, 
+és ahol elérhetõ. A regisztrált felhasználók összes vásárlása legyenek láthatók, 
+bármikor visszatudják keresni, az elõzõ rendelési elõzményeket. 
+
 4. Jelenlegi üzleti folyamatok
 5. Igényelt üzleti folyamatok
