@@ -90,6 +90,8 @@ rakni. A rendelés meneteálljon több fázisból (pl. 5-bõl). Igény szerint
 lehessen látni, hogy melyik csiga tartozékból és termékbõl, a mennyiséget, 
 és ahol elérhetõ. A regisztrált felhasználók összes vásárlása legyenek láthatók, 
 bármikor visszatudják keresni, az elõzõ rendelési elõzményeket. 
+A rendszer háromféleképpen legyen elérhetõ, felhasználóknak, dolgozóknak, 
+és az igazgatónak. 
 
 4. Jelenlegi üzleti folyamatok
 5. Igényelt üzleti folyamatok
