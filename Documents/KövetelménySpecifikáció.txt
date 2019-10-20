@@ -47,6 +47,30 @@ az adatbázisban is.
 	azonosítására alkalmas azonosító, vásárolt termék(ek).
 	Az adatbázis tartalma még változhat!
 2. Jelenlegi helyzet
+
+Jelenleg nincs lehetõség a tárgyak továbbadására,
+forgalmazására csak a boltban. A bolt kevés embert ér 
+el személyesen, nincs lehetõsége nagy tömegeket bevonzani.
+Reklámozni többnyire szórólapon megoldható, de 
+a vásárlókat ez is csak a boltba navigálhatja.
+Az ide látogatók nem látják milyen termékek fogják fogadni
+õket, nem tudják mire számítsanak mielõtt a boltba
+érkeznének. 
+A távolról érkezõ, vásárolni kívánóknak az utazás sok
+idõt elvehet az idejükbõl, így dönthetnek amelett, hogy
+a kívánt terméket más forrásból vásárolják meg. 
+Az üzlet nyitvatartás szempontjából sem elõnyös,
+ha nincs online/offline elérhetõség, hiszen több 
+eladóra, dolgozóra van szükség ahhoz, hogy minél 
+inkább lefedje az elérhetõség a vásárlók életét.
+A nézelõdni kívánó embereknek is idõt spórolhatnánk,
+ugyanis könnyebben és gördülékenyebben meg lehet
+találni egy terméket online. Nincs szükség fizikálisan
+a helyszínen tartózkodni, átnézni az árukészletet, 
+esetleg az alkalmazottaknak sem szükséges pontosan
+körbeírni az árukkal kapcsolatos információkat.
+(pl.: mennyi van belõle)
+
 3. Vágyálom rendszer
 4. Jelenlegi üzleti folyamatok
 5. Igényelt üzleti folyamatok
