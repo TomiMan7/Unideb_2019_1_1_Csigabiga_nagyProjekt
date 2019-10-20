@@ -94,4 +94,20 @@ A rendszer háromféleképpen legyen elérhetõ, felhasználóknak, dolgozóknak,
 és az igazgatónak. 
 
 4. Jelenlegi üzleti folyamatok
+
+A mostani folyamatok csak arra adnak lehetõséget, hogy a vásárló bemenjen
+a boltba, nézelõdjön, viszont ezzel sok idõt pazarol el. Egy jelenlegi
+üzleti folyamat például: a vásárló bemegy, nézelõdik, adott esetben próbál,
+méretet keres, ami nagyon sok idõbe telik. Továbbá, ha sokan vannak, 
+még többet várni kell, emiatt a vásárló akár el is mehet a boltból. Ezzel
+csökkenhet az eladások száma és a bevétel. A boltnak nem gazdaságos ez a helyzet,
+mivel így több alkalmazottat kell felvennie, ami nem feltétlenül kifizetõdõ.
+A bolt reklámozása a mostani helyzetben szórólappal van megoldva, aminek
+a környezetre való hatása nem a legmegfelelõbb. Sok szükséges a reklámokból, 
+amitõl környezetszennyezés lesz. A nyitvatartási idõ miatt nem mindenki tud
+vásárolni az üzletben, vagy ünnepnapokon erre nincs is lehetõség, emiatt
+hozódhat fel olyan probléma, hogy más boltokban vásárolnak. 
+A vásárlók az elsõ vásárlás alkamával nem tudják milyen termékek vannak, 
+árban és minõségben. Nem tudnak elõre tájékozódni. 
+
 5. Igényelt üzleti folyamatok
