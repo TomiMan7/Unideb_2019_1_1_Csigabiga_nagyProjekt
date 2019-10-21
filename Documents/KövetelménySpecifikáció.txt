@@ -111,3 +111,11 @@ A vásárlók az elsõ vásárlás alkamával nem tudják milyen termékek vannak,
 árban és minõségben. Nem tudnak elõre tájékozódni. 
 
 5. Igényelt üzleti folyamatok
+
+A cél egy könnyen átlátható, és könnyen kezelhetõ felület elkészítése,
+amivel a vásárlók is hamar megbarátkozhatnak. Egy egyszerû, lineáris 
+folyamat alapján szeretnénk, hogy mûködjön, és könnyen lekövethetõ legyen, 
+hogy probléma esetén tudjuk, hogy hol akadt el a vásárló, vagy mivel lehetett
+problémája. A vásárlónak legyen lehetõsége hozzájutni a termékkel kapcsolatos információkhoz. A szoftver legyen kezelhetõ, és az adatbázisa bõvíthetõ, hogy árucsere / frissítés esetén ne okozzon gondot a kezelése a munkatársaknak. 
+Ezeken felül könnyen letölthetõ vagy megvásárolható szoftverre lenne szükség,
+amihez senkinek nem okoz gondot hozzáférni.
