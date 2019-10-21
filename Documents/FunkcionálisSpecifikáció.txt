@@ -35,5 +35,34 @@ fogunk kezelni. Továbbá lehetõsége lesz egy hírlevélre is feliratkoznia
  és átadja a csomag követéséhez szükséges kódot a felhasználónak.
 2.Jelenlegi helyzet
 3.Vágyálom rendszer
+
+A programot úgy tervezzük, hogy a felhasználók gyorsan el tudják majd érni. 
+Hordozhatóság szempontjából, a késõbbiekben mobilalkalmazás és/vagy weboldal 
+formájában is lehetõség lesz majd elérni a szoftvert. Indítás után
+a felhasználó tudjon választani, hogy regisztrál, belép, vagy belépés
+nélkül kívánja megnézni, majd a késõbbiekben megrendelni a termékeket.
+A felületét igyekszünk a lehetõ legegyszerûbbre, felhasználóbarátra
+készíteni, ezáltal a vásárló könnyen el tudjon igazodni az oldalon,
+tudjon egyszerûen keresni, és a rendelés menete is érthetõ legyen.
+Megoldható, hogy a bejelentkezés idõzített legyen, bár nem ajánlanám.
+Felesleges lehet a böngészõ számára, hogy ha nem figyel oda pár percig,
+akkor a program kilép a felhasználói profilból, így 10 percenként újra 
+be kell jelentkezni. A kosár funkció és a rendelés több fázisából álló 
+menete is megoldható. Bejelentkezés után, jobbb oldalt legfelül egy kosarat
+építünk be, amire ha a felhasználó rányom a megrendelni kívánt termékekhez
+visz. Itt is levannak írva az adott termék adatai, és innen lehet elindítani 
+a rendelést. Olyan funkciókat biztosítunk, hogy a vásárló tudjon többet is 
+rendelni ugyanabból, vagy törölni, és a legfontosabb, hogy úgy készítjük el
+a szoftvert, hogy tudja folytatni a nézelõdést, és más termékekekt a kosárba
+helyezni. Így egyszerre több terméket is tud rendeleni. A saját adatoknál 
+készítünk egy olyan pontot, amire kattintva meglehet názni az összes, elõzõ
+rendeléseket. Ajánlanám figyelmébe a véleményezést, mint funkciót.
+Beleépíthetjük a programba, hogy minden vásárlás után, a rendszer 
+automatikusan küldjön egy véleményezõ kérdõívet,természetesen anonim formában,
+és ebbõl lehetne statisztikát készíteni a bolt számára. A felhasználó
+a véleméynét egy 1-tõl 5-ig  tartó skálán fejezheti ki, ami csillagokból is állhat.
+Továbbá nem korlátozzuk azt, hogy csak a bolt nyitvatartási idejében lehessen 
+rendelni, hanem a nap 24 órájában.
+
 4.Jelenlegi üzleti folyamatok
 5.Igényelt üzleti folyamatok
