@@ -33,7 +33,22 @@ fogunk kezelni. Továbbá lehetõsége lesz egy hírlevélre is feliratkoznia
  amennyiben úgy kívánja, ez nem lesz feltétele a vásárlás befejezésének.
  A kívánt adatok bevitele után a program rögzíti a rendelést az adatbázisba,
  és átadja a csomag követéséhez szükséges kódot a felhasználónak.
+
 2.Jelenlegi helyzet
+
+A jelenlegi helyzet megoldására (Követelményspecifikáció dokumentumban
+található részletes leírás) fejlesztenénk a szoftvert. Ezzel növekedne
+a vásárlás élménye is, flexibilissé válna. Az felhasználók és a dolgozók
+idejét is megspórolná. A regisztráció/ bejelentkezés oldalon egyértelmû,
+és egyszerûlenne kitölteni a mezõket, ide alapadatokat lenne szükséges 
+megadni. Maga a felület a termékekkel felhasználóbarát lenne, hiszen arra
+törekszünk, hogy minél gyorsabb és használhatóbb legyen a szoftver. 
+A termék a neve alapján felkelti a vásárló figyelmét, majd leírását olvasva
+pontos adatokat kaphat arról, hogy mit vásárolna meg.
+A vásárlás egyszerûen egy vásárlás gombbal történne, és a korábbi adatok 
+alapján könnyen is véghezvihetõ a folyamat. Ezután a leadott rendelést
+és a termékeket a dolgozók können átláthatják, kezelni tudják. 
+
 3.Vágyálom rendszer
 
 A programot úgy tervezzük, hogy a felhasználók gyorsan el tudják majd érni. 
