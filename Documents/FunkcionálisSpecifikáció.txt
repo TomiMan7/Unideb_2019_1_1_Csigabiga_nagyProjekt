@@ -66,3 +66,13 @@ rendelni, hanem a nap 24 órájában.
 
 4.Jelenlegi üzleti folyamatok
 5.Igényelt üzleti folyamatok
+
+A korábban leírtak alapján a szoftvert úgy tervezzük, hogy felhasználóbarát 
+legyen, és az ott dolgozóknak is egyértelmû legyen a kezelése.
+Az adatbázist is egyszerûen lehessen feltölteni, frissíteni.
+A helyes mûködése a következõ lenne: [workflow] oldal megnyitása -> 
+regisztráció -> ezzel létrehozunk egy profilt -> a továbbiakban a regisztráció helyett belépéssel használja a felhasználó a felületet (amennyiben helyesen tudja
+a belépéshez szükséges adatait) -> az oldalon böngészés -> különbözõ termékek
+elérése egy kattintással -> leírás / képek a termékekrõl -> vásárlás gomb
+Ezzel a folyamattal juthatna a vásárló egy adott termékhez. (késõbbiekben
+folyamatábra formájában a dokumentumok között megtekinthetõ)
