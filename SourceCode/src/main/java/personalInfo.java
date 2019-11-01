@@ -3,6 +3,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -39,6 +40,8 @@ public class personalInfo extends Application implements EventHandler<ActionEven
         primaryStage.setTitle("The Snail Sale - Személyes információk bekérése");
         primaryStage.setResizable(false);
 
+        Image icon = new Image("./icon.jpg");
+        primaryStage.getIcons().add(icon);
 
         Pane layout = new Pane();
 

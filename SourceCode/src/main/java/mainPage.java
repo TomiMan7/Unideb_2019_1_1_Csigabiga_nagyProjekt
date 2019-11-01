@@ -3,6 +3,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -60,6 +61,8 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
     {
         primaryStage.setTitle("The Snail Sale");
         primaryStage.setResizable(false);
+        Image icon = new Image("./icon.jpg");
+        primaryStage.getIcons().add(icon);
 
         Pane layout = new Pane();
 
