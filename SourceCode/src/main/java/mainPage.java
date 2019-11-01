@@ -8,7 +8,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
-public class mainPage extends Application implements EventHandler<ActionEvent> {
+public class mainPage extends Application implements EventHandler<ActionEvent>
+{
 
     Stage mainPageStage = new Stage();
 
