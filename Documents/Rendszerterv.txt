@@ -1,0 +1,95 @@
+Rendszerterv
+The Snail Sale
+-A rendszer célja
+	A The Snail Sale egy olyan desktop applikáció, amivel a felhasználók
+könnyen, és gyorsan tudnak vásárolni.
+	A rendszer célja egy olyan applikáció létrehozása, ami egy online
+adatbázishoz csatlakozva, szofisztikált keresõrendszert alkalmazva segíti
+ a felhasználóit, a megfelelõ termékek megvásárlásában.
+	A kívánt termék megkeresése után, a termékrõl a program megjeleníti a
+különbözõ, az adatbázisban tárolt adatokat a felhasználó számára. Ezeket
+ az adatokat a termékrõl az ablak közepén elhelyezett, információs 
+részlegben tekintheti meg a felhasználó.
+	A kiválaszott, megvételre szánt termékeket a kosárhoz adhatja user, amit
+bármikor megtekinthet. Miután kiválasztotta a megvásárolandó terméket, a
+rendszer összegyûjti és tematikusan bemutatja, hogy mely termékeket
+választotta ki a felhasználó. Ekkor még lehetõsége van a felhasználónak,
+ arra, hogy az esetlegesen nem kívánt termékeket kivegye a kosarából a
+megfelelõ gombra kattintva.
+	Ezután a program folytatva a vásárlás folyamatát, megkéri a felhasználót,
+hogy írja be a vásárláshoz szükséges személyes adatokat. A megfelelõ
+adatok beírása után, a felhasználót, még egy, utolsó adategyeztetés
+választja el a sikeres vásárlástól. Miután meggyõzõdött arról, hogy az
+adatait helyesen írta be, és a megfelelõ termékeket választotta ki, 
+konfirmálja a vásárlás helyességét. Ezután a program generál egy úgynevezett
+"tracking number" amivel a vásárlást tudja követni, illetve a megfelelõ
+adatokat rögzíti az adatbázis megfelelõ táblájába.
+	A vásárlás befejezése után a program a keresõ oldalra irányítja a
+felhasználót, további vásárlásra adva lehetõséget.
+	A rendszernek nem célja, a felhasználók által eladni kívánt termékek
+felvétele az adatbázisba, így arra nem is kínál lehetõséget a program.
+Nem célja a termékek szöveges értékelése se, így csak egy 1-tõl 5-ig,
+egész számokat tartalmazó skálán értékelhetik a regisztrált felhasználók a termékeket.
+-Üzleti folyamatok modellje
+-Követelmények 
+-Funkcionális terv 
+-Fizikai környezet 
+-Absztrakt domain modell 
+-Architekturális terv 
+-Adatbázis terv
+	Programunk a tárolandó adatokat, online adatbázisban fogja tárolni.
+Online felületnek a phpmyadmint fogjuk használni.  Tesztelési fázisban,
+egyelõre mindenki offline, saját gépén elérhetõ adatbázist használjon,
+amit egy központi adatbázisból fogunk exportálni, így elkerülendõ
+bárminemû, nem kívánt módosítás a központi adatbázisban.
+	Az adatbázis felépítésénél ügyeljünk a megrendelõ kérésére. Azaz legyen
+elkülönítve a regisztrált felhasználók, a vásárlások, illetve az áruk
+adatai, egy-egy különálló táblában. 
+	A táblák a következõek legyenek:
+-"users", 
+-"goods",
+-"orders".
+
+A "users" táblában fogjuk tárolni a regisztrált felhasználók adatait.
+Tárolandó adatok: felhasználó neve, e-mail címe, és jelszava titkosítva. 
+	A tábla oszlopai: 
+-"username"-felhasználó név, elsõdleges kulcs, külsõ kulcs az "order"
+táblához, egyedi, nem lehet üres, varchar2, 64 karakter hosszú.
+-"email"-e-mail cím, varchar2, egyedi, nem lehet üres, 64 karakter hosszú.
+-"password"-jelszó, nem lehet üres, varchar2 64 karakter hosszú, MD5
+titkosított.
+
+A "goods" táblában fogjuk tárolni, az áruk adatait.
+Tárolandó adatok:elérhetõ mennyiség, név, ár, cikkszám, értékelés.
+-"quantity"-elérhetõ mennyiség, number, 4 karakter hosszú, nem lehet üres.
+-"name"-név, egyedi, nem lehet üres, varchar2 32 karakter hosszú.
+-"price"-ár, nem lehet üres, number 6 karakter hosszú.
+-"number"-cikkszám, elsõdleges kulcs, egyedi, nem lehet üres, varchar2
+64 karakter hosszú.
+-"rating"-értékelés, number 1 karakter hosszú.
+
+Az "orders" táblában fogjuk tárolni a leadott rendeléseket.
+Tárolandó adatok: megrendelõ neve, felhasználó neve, telefonszáma,
+szállítási címe, e-mail címe, fizetési módszere, szállítási módszer,
+rendelt áruk, rendelés száma.
+-"name"-név, nem lehet üres, varhcar2, 64 karakter hosszú.
+-"username"-felhasználó neve, külõs kulcs a "users" táblához, nem lehet
+üres, varchar2 64 karakter hosszú.
+-"phone"-telefonszám, number 11 karakter hosszú, nem lehet üres.
+-"address"-szállítási cím, varchar2 64 karakter, nem lehet üres.
+-"email"-e-mail, varchar2 64 karakter hosszú, nem lehet üres.
+-"payment_method"-fizetési módszer, nem lehet üres, varchar2 32 karakter
+hosszú.
+-"shipment_method"-szállítási módszer, nem lehet üres, varchar2 32
+karakter hosszú.
+-"goods"-rendelt áruk, nem lehet üres, number 324 karakter hosszú. Az áruk
+cikkszámait tárolja ","-vel elválasztva, maximum 5 áru tárolására alkalmas.
+-"tracking_number"-rendelés száma, egyedi, elsõdleges kulcs, nem lehet
+üres, number 6karakter hosszú.
+
+Az adatbázisról megtalálható egy diagram az alábbi címen:
+https://raw.githubusercontent.com/TomiMan7/Unideb_2019_1_1_Csigabiga_nagyProjekt/master/Documents/Database%20diagram/database.JPG 
+-Implementációs terv 
+-Tesztterv 
+-Telepítési terv 
+-Karbantartási terv 
