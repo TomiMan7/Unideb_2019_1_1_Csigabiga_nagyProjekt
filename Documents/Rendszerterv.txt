@@ -107,7 +107,104 @@ cikkszámait tárolja ","-vel elválasztva, maximum 5 áru tárolására alkalmas.
 
 Az adatbázisról megtalálható egy diagram az alábbi címen:
 https://raw.githubusercontent.com/TomiMan7/Unideb_2019_1_1_Csigabiga_nagyProjekt/master/Documents/Database%20diagram/database.JPG 
--Implementációs terv 
+
+-Implementációs terv
+A fejlesztés során, objektum orientált programozással fogjuk elkészíteni
+ a The Snail Sale programot. Ehhez Java programozási nyelvet fogunk 
+használni, a 11-es verziót. 
+	A grafikus felületet JavaFx segítségével valósítjuk meg.
+	A program osztályait 4 csoportba lehet besorolni.
+-A grafikus felületekért felelõs osztályok
+-A grafikus felületek inputját lekezelõ függvényeket tartalmazó osztályok
+-Az adatbázist használó és kezelõ függvények osztálya
+-A main függvény szerepét játszó indító osztály
+	Az egyes csoportba tartozó osztályok és megnevezéseik:
+-GUI osztályok:
+		-login.java
+		-registration.java
+		-mainPage.java
+		-cart.java
+		-cartOverview.java
+		-personalInfo.java
+		-orderConfirmation.java
+
+-GUI input kezelõ osztályok:
+		-loginController.java
+		-registrationController.java
+		-mainPageController.java
+		-cartController.java
+		-cartOverviewController.java
+		-personalInfoController.java
+		-orderConfirmationController.java
+
+-Az adatbázist kezelõ osztályok:
+		-database.java
+
+Az indító osztály:
+		-launcher.java
+	Az egyes osztályok és tartalmuk:
+-login.java: Ebben az osztályban kerül megvalósításra a belépés képernyõnek
+a megírása.
+Kérje be a program a belépéshez szükséges információkat a felhasználótól.
+Sikeres bejelentkezés esetén a mainPage.java megfelelõen megváltoztatott
+ablakát hozza fel.
+A még nem regisztrált felhasználóknak adjon lehetõséget a regisztrációra
+a registration.java-ban megírt ablak felhozásával.
+
+-registration.java:Ebben az osztályban kerül megvalósításra a regisztráció
+képernyõnek a megírása.
+Kérje be a program a regisztrációhoz szükséges információkat a felhasználótól.
+Sikeres regisztráció esetén a login.java ablakát hozza fel.
+
+-mainPage.java:Ebben az osztályban kerül megvalósításra a böngészés
+képernyõnek a megírása.  Továbbá, ez a fõképernyõ, ezt indítja a
+launcher.java main függvénye.
+Ezen a képernyõn helyezkedik el a kosár, a bejelentkezés, a vásárlás
+ablakhoz vezetõ gomb is.
+
+-cart.java:Ebben az osztályban kerül megvalósításra a kosár képernyõnek
+a megírása.  Sorakoztassa fel a felhasználó által a kosárba tett termkékeket,
+információval együtt.
+
+-cartOverview.java:Ebben az osztályban kerül megvalósításra a vásárlás
+elõtt a kosár tartalmát felmutató képernyõnek a megírása.
+Tudjon a felhasználó törölni nem kívánt árucikkeket, vagy mennyiségeket.
+A vásárlás folytatásához a megfelelõ gomb megnyomása után a personalInfo.java
+osztályban megírt ablakot hozza fel.
+
+-personalInfo.java:Ebben az osztályban kerül megvalósításra a vásárlásnál
+a személyes információk bekérésének képernyõjének a megírása.
+
+-orderConfirmation.java:Ebben az osztályban kerül megvalósításra a vásárlás
+végleges visszaigazolásának képernyõjének a megírása.
+
+-loginController.java: a login.java GUI osztályhoz tartozó függvényeket
+tartalmazó osztály
+
+-registrationController.java: a registration.java GUI osztályhoz tartozó
+függvényeket tartalmazó osztály
+
+-mainPageController.java: a mainPage.java GUI osztályhoz tartozó függvényeket
+tartalmazó osztály
+
+-cartController.java: a cart.java GUI osztályhoz tartozó függvényeket
+tartalmazó osztály
+
+-cartOverviewController.java: a cartOverview.java GUI osztályhoz tartozó
+függvényeket tartalmazó osztály
+
+-personalInfoController.java: a personalIno.java GUI osztályhoz tartozó
+függvényeket tartalmazó osztály
+
+-orderConfirmationController.java: a orderConfirmation.java GUI osztályhoz
+tartozó függvényeket tartalmazó osztály
+
+-launcher.java:Ebben az osztályban található a main függvény, ami
+elindítja a mainPage.java start függvényet.
+
+-database.java: Az adatbázist használó és kezelõ függvényeket tartalmazó
+osztály 
+
 -Tesztterv 
 -Telepítési terv 
 -Karbantartási terv 
