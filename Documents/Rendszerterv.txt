@@ -33,7 +33,25 @@ egész számokat tartalmazó skálán értékelhetik a regisztrált felhasználók a termé
 -Üzleti folyamatok modellje
 -Követelmények 
 -Funkcionális terv 
--Fizikai környezet 
+-Fizikai környezet
+Az applikációt a Java programozási nyelvnek a használatával fogjuk
+elkészíteni.  A 11-es verziót használva, de elõre láthatólag 100%-ban
+csak a 8-as verzió funkcióit felhasználva, azaz teljes mértékben
+kompatibilis lesz a 8-as verzióval. 
+	A Java programozási nyelvnek köszönhetõen, így a program, használható
+lesz mind Windows, illetve Mac gépeken is.
+	A programnak szüksége lesz internet kapcsolatra, az online adatbázis
+használatából kifolyólag. Az internetkapcsolat sebességének minimálisan
+el kell érnie az 1Mb/s sebességet, élvezhetõ felhasználás érdekében.
+	A java nyelv sajátosságaiból kifolyólag, és a gördülékeny felhasználás
+érdekében, az éppen szóban forgó operációs rendszer, valamint a
+feljesztõkörnyezet, és egyéb segédprogramokhoz (lsd. késõbb) szükséges 
+minimális rendszerkövetelményein felül ajálnlatos egy 2 magos processzor,
+és legalább 1Gb RAM használata.
+	Fejlesztõi környezetnek az IntelliJ IDE-t fogjuk használni, a minél
+könnyebb fejlesztés érdekében.
+	Az online adatbázis kezeléséhez pedig phpMyadmint.
+	Az adatbázis szerverhez például wamp vagy xamp szerver is használható. 
 -Absztrakt domain modell 
 -Architekturális terv 
 -Adatbázis terv
