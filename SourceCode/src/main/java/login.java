@@ -22,6 +22,8 @@ public class login extends Application implements EventHandler<ActionEvent>
     Button regisztracio = new Button("Regisztráció");
 
     Label info = new Label("Kérem jelentkezzen be!");
+    Label info2 = new Label("Ha még nincs fiókja, kérem regisztráljon be itt!");
+
     Label felhasznalonev = new Label("Felhasználónév:");
     Label jelszo = new Label("Jelszó:");
 
@@ -45,6 +47,8 @@ public class login extends Application implements EventHandler<ActionEvent>
 
         info.setLayoutX(200);
         info.setLayoutY(20);
+        info2.setLayoutX(80);
+        info2.setLayoutY(280);
         felhasznalonev.setLayoutX(80);
         felhasznalonev.setLayoutY(90);
         jelszo.setLayoutX(80);
@@ -57,18 +61,19 @@ public class login extends Application implements EventHandler<ActionEvent>
         jelszoText.setLayoutY(130);
         jelszoText.setPrefWidth(250);
 
-        bejelentkezes.setLayoutX(80);
-        bejelentkezes.setLayoutY(300);
-        bejelentkezes.setPrefWidth(150);
-
-        regisztracio.setLayoutX(350);
+        regisztracio.setLayoutX(80);
         regisztracio.setLayoutY(300);
-        regisztracio.setPrefWidth(100);
+        regisztracio.setPrefWidth(150);
+
+        bejelentkezes.setLayoutX(350);
+        bejelentkezes.setLayoutY(300);
+        bejelentkezes.setPrefWidth(100);
 
         layout.getChildren().add(regisztracio);
         layout.getChildren().add(bejelentkezes);
 
         layout.getChildren().add(info);
+        layout.getChildren().add(info2);
         layout.getChildren().add(felhasznalonev);
         layout.getChildren().add(jelszo);
 
