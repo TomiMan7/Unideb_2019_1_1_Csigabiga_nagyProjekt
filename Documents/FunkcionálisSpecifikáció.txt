@@ -80,6 +80,19 @@ Továbbá nem korlátozzuk azt, hogy csak a bolt nyitvatartási idejében lehessen
 rendelni, hanem a nap 24 órájában.
 
 4.Jelenlegi üzleti folyamatok
+
+A jelenlegi folyamat most ugy néz ki, hogy a vásárló egy adott idõ
+intervallumban bemegy a boltba, nézelõdik és a legtöbb esetben vásárol.
+Gazdaságosság, kényelem, idõ és esetenként pénz spórolása lenne a cél 
+a SnailSale nevû program elkészítésével. Könnyebbséget jelentene nagyon sok 
+vásárló számára, mivel így nem lennének idõhöz (nyitvatartáshoz) kötve, hanem akkor 
+vásárolnak, rendelnek amikor akarnak. Nagyon sok esetben a szoftver használatával,
+a regisztrált felhasználóknak több, egyedi akciókkal lehetne kedveskedni, továbbá
+a még nem regisztráltakat buzditani arra, hogy használják a programot.
+Az online vásárlás folyamata a Jelenlegi helyzetben lévõ információk rövid változata. 
+Alapvetõ tulajdonságai közé tartozik a felhasználóbarát felület, könnyen kezelhetõség
+laikusok számára is.
+
 5.Igényelt üzleti folyamatok
 
 A korábban leírtak alapján a szoftvert úgy tervezzük, hogy felhasználóbarát 
