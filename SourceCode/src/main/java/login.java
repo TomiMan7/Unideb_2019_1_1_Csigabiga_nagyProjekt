@@ -1,6 +1,5 @@
-import javafx.application.Application;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -15,11 +14,10 @@ import javafx.stage.Stage;
  * hogy regisztralhasson.
  * Sikeres belepes utan a **mainPage** megfeleloen megvaltoztatott ablakat hozza fel.
  */
-public class login extends Application implements EventHandler<ActionEvent>
+public class login
 {
-    Stage login = new Stage();
     Button bejelentkezes = new Button("Bejelentkezés");
-    Button regisztracio = new Button("Regisztráció");
+    static Button regisztracio = new Button("Regisztráció");
 
     Label info = new Label("Kérem jelentkezzen be!");
     Label info2 = new Label("Ha még nincs fiókja, kérem regisztráljon be itt!");
@@ -30,8 +28,10 @@ public class login extends Application implements EventHandler<ActionEvent>
     TextField felhasznalonevText = new TextField();
     TextField jelszoText = new TextField();
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+
+    public void loginShow()
+    {
+        Stage primaryStage = new Stage();
         primaryStage.setTitle("The Snail Sale - Bejelentkezés");
         primaryStage.setResizable(false);
 
@@ -80,13 +80,18 @@ public class login extends Application implements EventHandler<ActionEvent>
         layout.getChildren().add(felhasznalonevText);
         layout.getChildren().add(jelszoText);
 
-        regisztracio.setOnAction(this);
-        bejelentkezes.setOnAction(this);
+        regisztracio.setOnAction(login::handle);
+        bejelentkezes.setOnAction(login::handle);
 
     }
-    @Override
-    public void handle(ActionEvent actionEvent)
+
+    public static void handle(ActionEvent actionEvent)
     {
+        if(actionEvent.getSource() == regisztracio)
+        {
+            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+            loginController.registrationShow();
+        }
 
     }
 }

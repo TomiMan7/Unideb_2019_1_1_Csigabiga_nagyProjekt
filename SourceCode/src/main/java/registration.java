@@ -13,9 +13,8 @@ import javafx.stage.Stage;
  * A regisztraciohoz szukseges adatokat keri be a felhasznalotol.
  * Sikeres regisztracio eseten visszaviszi a felhasznalot a **login** ablakra.
  */
-public class registration extends Application implements EventHandler<ActionEvent>
+public class registration
 {
-    Stage registration = new Stage();
     Button regisztracio = new Button("Regisztráció");
     Button megse = new Button("Mégse");
 
@@ -30,8 +29,10 @@ public class registration extends Application implements EventHandler<ActionEven
     TextField jelszoText = new TextField();
     TextField jelszo2Text = new TextField();
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+
+    public void registrationShow()
+    {
+        Stage primaryStage = new Stage();
         primaryStage.setTitle("The Snail Sale - Regisztráció");
         primaryStage.setResizable(false);
 
@@ -91,12 +92,12 @@ public class registration extends Application implements EventHandler<ActionEven
         layout.getChildren().add(jelszoText);
         layout.getChildren().add(jelszo2Text);
 
-        regisztracio.setOnAction(this);
-        megse.setOnAction(this);
+        regisztracio.setOnAction(registration::handle);
+        megse.setOnAction(registration::handle);
 
     }
-    @Override
-    public void handle(ActionEvent actionEvent)
+
+    public static void handle(ActionEvent actionEvent)
     {
 
     }

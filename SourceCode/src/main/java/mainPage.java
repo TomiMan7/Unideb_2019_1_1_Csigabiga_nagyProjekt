@@ -244,19 +244,16 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
         nevSzerint.setOnAction(this);
         arSzerint.setOnAction(this);
         ertekelesSzerint.setOnAction(this);
-        ertekelo1.setOnAction(this);
-        ertekelo2.setOnAction(this);
-        ertekelo3.setOnAction(this);
-        ertekelo4.setOnAction(this);
-        ertekelo5.setOnAction(this);
 
         rendezes.setOnAction(this);
         keresesEredmenye.setOnAction(this);
     }
 
     @Override
-    public void handle(ActionEvent actionEvent)
-    {
-
+    public void handle(ActionEvent actionEvent) {
+        if (actionEvent.getSource() == bejelentkezes)
+        {
+            mainPageController.loginShow();
+        }
     }
 }
