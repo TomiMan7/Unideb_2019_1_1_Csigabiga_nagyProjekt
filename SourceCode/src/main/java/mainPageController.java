@@ -15,4 +15,10 @@ public class mainPageController
         cartOverview.cartOverViewShow();
     }
 
+    public static void cartShow()
+    {
+        cart cart = new cart();
+        cart.cartShow();
+    }
+
 }

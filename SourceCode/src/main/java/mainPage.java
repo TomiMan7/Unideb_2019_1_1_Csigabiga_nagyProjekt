@@ -267,5 +267,10 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
             mainPageController.cartOverwiewShow();
         }
+
+        if(actionEvent.getSource() == kosar)
+        {
+            mainPageController.cartShow();
+        }
     }
 }

@@ -1,4 +1,5 @@
 import javafx.event.ActionEvent;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -14,13 +15,12 @@ import javafx.stage.Stage;
  * Sikeres vasarlas eseten vigyen vissza a **mainPage**-re.
  */
 
-public class orderConfirmation {
-    Stage orderConfirmationStage = new Stage();
-    Button vissza = new Button("Vissza");
-
+public class orderConfirmation
+{
     Label vasarlas = new Label("A vásárlás véglegesítése");
 
-    Button fizet = new Button("Fizetés");
+    static Button fizet = new Button("Fizetés");
+    static Button vissza = new Button("Vissza");
 
     Rectangle termekhelye = new Rectangle(40,100,80,80);
     Rectangle termekhelye1 = new Rectangle(40,220,80,80);
@@ -43,7 +43,8 @@ public class orderConfirmation {
     Label osszeg = new Label("Fizetendő:   Ft");
 
 
-    public void orderConfirmationShow() {
+    public void orderConfirmationShow()
+    {
         Stage primaryStage = new Stage();
 
         primaryStage.setTitle("The Snail Sale - A vásárlás véglegesítése");
@@ -137,12 +138,21 @@ public class orderConfirmation {
 
         fizet.setOnAction(orderConfirmation::handle);
         vissza.setOnAction(orderConfirmation::handle);
-
-
-
     }
 
-    public static void handle(ActionEvent actionEvent) {
+    public static void handle(ActionEvent actionEvent)
+    {
+        if(actionEvent.getSource() == fizet)
+        {
+            //ide majd jon egy felugro ablak, h koszi a vasarlast + a tracking number
+            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+            orderConfirmationController.mainPageSHow();
+        }
 
+        if(actionEvent.getSource() == vissza)
+        {
+            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+            orderConfirmationController.personailInfoShow();
+        }
     }
 }

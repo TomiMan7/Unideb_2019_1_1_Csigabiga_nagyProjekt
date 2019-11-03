@@ -1,6 +1,7 @@
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -12,16 +13,17 @@ import javafx.stage.Stage;
 /**
  * A kosar, es annak tartalmat mutato GUI-ablak.
  */
-public class cart extends Application implements EventHandler<ActionEvent> {
-    Stage cart = new Stage();
-
-    Button penztarhoz = new Button("Pénztárhoz");
-    Button vissza = new Button("Vissza");
+public class cart
+{
+    static Button penztarhoz = new Button("Pénztárhoz");
+    static Button vissza = new Button("Vissza");
 
     Label info = new Label("A kosár tartalma: ");
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+
+    public void cartShow()
+    {
+        Stage primaryStage = new Stage();
         primaryStage.setTitle("The Snail Sale - Kosár");
         primaryStage.setResizable(false);
 
@@ -50,12 +52,22 @@ public class cart extends Application implements EventHandler<ActionEvent> {
 
         layout.getChildren().add(info);
 
-        penztarhoz.setOnAction(this);
-        vissza.setOnAction(this);
+        penztarhoz.setOnAction(cart::handle);
+        vissza.setOnAction(cart::handle);
     }
 
-    @Override
-    public void handle(ActionEvent actionEvent) {
+    public static void handle(ActionEvent actionEvent)
+    {
+        if(actionEvent.getSource() == penztarhoz)
+        {
+            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+            cartController.personalInfoShow();
+        }
 
+        if(actionEvent.getSource() == vissza)
+        {
+            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+            cartController.mainPageShow();
+        }
     }
 }

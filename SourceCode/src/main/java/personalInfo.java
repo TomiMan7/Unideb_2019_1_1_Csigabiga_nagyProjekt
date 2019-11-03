@@ -1,4 +1,5 @@
 import javafx.event.ActionEvent;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -12,7 +13,7 @@ import javafx.stage.Stage;
  */
 public class personalInfo
 {
-    Button nextPage = new Button("Tovább a vásárlás véglegesítéséhez");
+    static Button nextPage = new Button("Tovább a vásárlás véglegesítéséhez");
 
     Label info = new Label("Kérjük írja be az alábbi információkat a vásárlás folytatásához!");
     Label nev = new Label("Név:");
@@ -121,6 +122,10 @@ public class personalInfo
 
     public static void handle(ActionEvent actionEvent)
     {
-
+        if(actionEvent.getSource() == nextPage)
+        {
+            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+            personalInfoController.orderConfirmationShow();
+        }
     }
 }
