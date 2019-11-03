@@ -1,6 +1,4 @@
-import javafx.application.Application;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -12,10 +10,8 @@ import javafx.stage.Stage;
  * A vasarlashoz szukseges szemelyes informaciokat keri be a vasarlotol.
  * A megfelelo adatok beirasa utan az **orderConfirmation** ablakra visz at.
  */
-public class personalInfo extends Application implements EventHandler<ActionEvent>
+public class personalInfo
 {
-    Stage personalInfoStage = new Stage();
-
     Button nextPage = new Button("Tovább a vásárlás véglegesítéséhez");
 
     Label info = new Label("Kérjük írja be az alábbi információkat a vásárlás folytatásához!");
@@ -34,9 +30,9 @@ public class personalInfo extends Application implements EventHandler<ActionEven
     ComboBox szallitasiModszerBox = new ComboBox();
     ComboBox fizetesiModszerBox = new ComboBox();
 
-    @Override
-    public void start(Stage primaryStage) throws Exception
+    public void personalInfoShow()
     {
+        Stage primaryStage = new Stage();
         primaryStage.setTitle("The Snail Sale - Személyes információk bekérése");
         primaryStage.setResizable(false);
 
@@ -120,11 +116,10 @@ public class personalInfo extends Application implements EventHandler<ActionEven
         layout.getChildren().add(szallitasiModszerBox);
         layout.getChildren().add(fizetesiModszerBox);
 
-        nextPage.setOnAction(this);
+        nextPage.setOnAction(personalInfo::handle);
     }
 
-    @Override
-    public void handle(ActionEvent actionEvent)
+    public static void handle(ActionEvent actionEvent)
     {
 
     }
