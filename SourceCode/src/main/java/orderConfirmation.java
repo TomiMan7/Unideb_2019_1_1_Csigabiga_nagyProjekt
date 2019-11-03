@@ -9,6 +9,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * A vasarlas vegso lezarasa, adjon kepet hogy mit, mennyit, mennyiert vasarol az illeto, hova, kinek
  * viszik ki, hogyan stb.
@@ -77,7 +79,7 @@ public class orderConfirmation
         termekek.setLayoutX(40);
         termekek.setLayoutY(80);
 
-        szemelyes.setLayoutX(300);
+        szemelyes.setLayoutX(310);
         szemelyes.setLayoutY(80);
 
         nev.setLayoutX(310);
@@ -144,7 +146,7 @@ public class orderConfirmation
     {
         if(actionEvent.getSource() == fizet)
         {
-            //ide majd jon egy felugro ablak, h koszi a vasarlast + a tracking number
+            orderConfirmationController.thanks();
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
             orderConfirmationController.mainPageSHow();
         }

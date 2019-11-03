@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 public class personalInfo
 {
     static Button nextPage = new Button("Tovább a vásárlás véglegesítéséhez");
+    static Button vissza = new Button("Vissza a kosárhoz");
 
     Label info = new Label("Kérjük írja be az alábbi információkat a vásárlás folytatásához!");
     Label nev = new Label("Név:");
@@ -43,7 +44,7 @@ public class personalInfo
         Pane layout = new Pane();
 
 
-        Scene scene = new Scene(layout, 550, 400);
+        Scene scene = new Scene(layout, 550, 450);
 
 
         primaryStage.setScene(scene);
@@ -99,7 +100,12 @@ public class personalInfo
         nextPage.setLayoutY(350);
         nextPage.setPrefWidth(370);
 
+        vissza.setLayoutX(190);
+        vissza.setLayoutY(400);
+        vissza.setPrefWidth(150);
+
         layout.getChildren().add(nextPage);
+        layout.getChildren().add(vissza);
 
         layout.getChildren().add(info);
         layout.getChildren().add(nev);
@@ -118,6 +124,7 @@ public class personalInfo
         layout.getChildren().add(fizetesiModszerBox);
 
         nextPage.setOnAction(personalInfo::handle);
+        vissza.setOnAction(personalInfo::handle);
     }
 
     public static void handle(ActionEvent actionEvent)
@@ -126,6 +133,12 @@ public class personalInfo
         {
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
             personalInfoController.orderConfirmationShow();
+        }
+
+        if(actionEvent.getSource() == vissza)
+        {
+            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+            personalInfoController.cartOverViewShow();
         }
     }
 }

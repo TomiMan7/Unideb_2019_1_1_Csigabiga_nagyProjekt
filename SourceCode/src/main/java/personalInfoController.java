@@ -8,4 +8,10 @@ public class personalInfoController
         orderConfirmation orderConfirmation = new orderConfirmation();
         orderConfirmation.orderConfirmationShow();
     }
+
+    public static void cartOverViewShow()
+    {
+        cartOverview cartOverview = new cartOverview();
+        cartOverview.cartOverViewShow();
+    }
 }
