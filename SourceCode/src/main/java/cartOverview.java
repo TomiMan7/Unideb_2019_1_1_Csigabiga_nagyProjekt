@@ -1,4 +1,5 @@
 import javafx.event.ActionEvent;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -13,15 +14,13 @@ import javafx.stage.Stage;
  * mennyisegbeli valtoztatast enged, vagy teljes tetelek kivetelet a kosarbol.
  * A **perconailInfo** ablakra visz at.
  */
-public class cartOverview {
-    Stage cartOverviewStage = new Stage();
-
-    Button vissza = new Button("Vissza");
-
+public class cartOverview
+{
     Label veglegesites = new Label("A kosár véglegesítése");
     Label ellenorzes = new Label("Kérjük ellenőrizze a kosár tartalmát!");
 
-    Button vasarlas = new Button("Vásárlás");
+    static Button vasarlas = new Button("Vásárlás");
+    static Button vissza = new Button("Vissza");
 
     Rectangle termekhelye = new Rectangle(40,100,80,80);
     Rectangle termekhelye1 = new Rectangle(40,220,80,80);
@@ -105,6 +104,16 @@ public class cartOverview {
     }
         public static void handle(ActionEvent actionEvent)
         {
+            if(actionEvent.getSource() == vasarlas)
+            {
+                ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+                cartOverviewController.personalInfoShow();
+            }
 
+            if(actionEvent.getSource() == vissza )
+            {
+                ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+                cartOverviewController.mainPageShow();
+            }
         }
 }

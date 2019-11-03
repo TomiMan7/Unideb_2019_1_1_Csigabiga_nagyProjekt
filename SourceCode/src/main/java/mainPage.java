@@ -1,6 +1,7 @@
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -55,6 +56,11 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
     /*
     * A kepek megjelenitesehez meg kell vmi-
     * */
+
+    public void mainPageShow()
+    {
+        start(mainPageStage);
+    }
 
     @Override
     public void start(Stage primaryStage)
@@ -250,10 +256,16 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
     }
 
     @Override
-    public void handle(ActionEvent actionEvent) {
+    public void handle(ActionEvent actionEvent)
+    {
         if (actionEvent.getSource() == bejelentkezes)
         {
             mainPageController.loginShow();
+        }
+        if(actionEvent.getSource() == vasarlashoz)
+        {
+            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+            mainPageController.cartOverwiewShow();
         }
     }
 }

@@ -8,4 +8,11 @@ public class mainPageController
         login login = new login();
         login.loginShow();
     }
+
+    public static void cartOverwiewShow()
+    {
+        cartOverview cartOverview = new cartOverview();
+        cartOverview.cartOverViewShow();
+    }
+
 }

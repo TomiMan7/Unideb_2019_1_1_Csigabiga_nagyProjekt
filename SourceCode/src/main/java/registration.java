@@ -1,6 +1,7 @@
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -16,7 +17,7 @@ import javafx.stage.Stage;
 public class registration
 {
     Button regisztracio = new Button("Regisztráció");
-    Button megse = new Button("Mégse");
+    static Button megse = new Button("Mégse");
 
     Label info = new Label("Kérjük regisztráljon be először a vásárlás elkezdéséhez");
     Label felhasznalonev = new Label("Felhasználónév:");
@@ -99,6 +100,11 @@ public class registration
 
     public static void handle(ActionEvent actionEvent)
     {
+        if(actionEvent.getSource() == megse)
+        {
+            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+            registrationController.loginShow();
+        }
 
     }
 }
