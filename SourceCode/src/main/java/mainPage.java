@@ -46,7 +46,7 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
     ComboBox keresesEredmenye = new ComboBox();
 
     TextField keresoSzoveg = new TextField();
-    TextField aruInfo = new TextField();
+    public static TextField aruInfo = new TextField();
 
     Rectangle rectangle = new Rectangle(240,70,500,400);
     Rectangle rectangle1 = new Rectangle(240,70,250,200);
@@ -65,6 +65,7 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
     @Override
     public void start(Stage primaryStage)
     {
+        database.Connect();
         primaryStage.setTitle("The Snail Sale");
         primaryStage.setResizable(false);
         Image icon = new Image("./icon.jpg");
@@ -267,10 +268,13 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
             mainPageController.cartOverwiewShow();
         }
-
         if(actionEvent.getSource() == kosar)
         {
             mainPageController.cartShow();
+        }
+        if(actionEvent.getSource() == kereses)
+        {
+            database.Query();
         }
     }
 }
