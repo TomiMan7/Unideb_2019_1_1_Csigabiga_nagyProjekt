@@ -62,7 +62,7 @@ public class database
 
     public static void Query()
     {
-        Connect();
+        //Connect();
         String name = mainPage.keresoSzoveg.getText();
         String type = "name";
         String order = "name";
@@ -99,7 +99,7 @@ public class database
 
                 mainPage.keresesEredmenye.getItems().add(dbname);
             }
-            CloseConnection();
+            //CloseConnection();
         }
         catch (SQLException e)
         {

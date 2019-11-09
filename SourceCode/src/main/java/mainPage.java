@@ -65,6 +65,8 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
     @Override
     public void start(Stage primaryStage)
     {
+        database.Connect();
+
         primaryStage.setTitle("The Snail Sale");
         primaryStage.setResizable(false);
         Image icon = new Image("./icon.jpg");
@@ -75,6 +77,13 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
         Scene scene = new Scene(layout, 950, 650);
         primaryStage.setScene(scene);
         primaryStage.show();
+        primaryStage.setOnCloseRequest( event ->
+        {
+            database.CloseConnection();
+            System.out.println("connection closed");
+            primaryStage.close();
+
+        });
 
         rectangle.setFill(null);
         rectangle.setStroke(Color.GRAY);
