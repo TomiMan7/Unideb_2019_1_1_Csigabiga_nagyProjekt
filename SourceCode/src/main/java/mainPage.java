@@ -33,19 +33,19 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
     Label termekadat4 = new Label("Termekadat:");
     Label ertekeloLabel = new Label("Értékelje a terméket!");
 
-    RadioButton nevSzerint = new RadioButton("Név szerinti keresés");
-    RadioButton arSzerint = new RadioButton("Ár szerinti keresés");
-    RadioButton ertekelesSzerint = new RadioButton("Értekelés szerinti keresés");
-    RadioButton ertekelo1 = new RadioButton("1");
-    RadioButton ertekelo2 = new RadioButton("2");
-    RadioButton ertekelo3 = new RadioButton("3");
-    RadioButton ertekelo4 = new RadioButton("4");
-    RadioButton ertekelo5 = new RadioButton("5");
+    public static RadioButton nevSzerint = new RadioButton("Név szerinti keresés");
+    public static RadioButton arSzerint = new RadioButton("Ár szerinti keresés");
+    public static RadioButton ertekelesSzerint = new RadioButton("Értekelés szerinti keresés");
+    public static RadioButton ertekelo1 = new RadioButton("1");
+    public static RadioButton ertekelo2 = new RadioButton("2");
+    public static RadioButton ertekelo3 = new RadioButton("3");
+    public static RadioButton ertekelo4 = new RadioButton("4");
+    public static RadioButton ertekelo5 = new RadioButton("5");
 
-    ComboBox rendezes = new ComboBox();
-    ComboBox keresesEredmenye = new ComboBox();
+    public static ComboBox rendezes = new ComboBox();
+    public static ComboBox keresesEredmenye = new ComboBox();
 
-    TextField keresoSzoveg = new TextField();
+    public static TextField keresoSzoveg = new TextField();
     public static TextField aruInfo = new TextField();
 
     Rectangle rectangle = new Rectangle(240,70,500,400);
@@ -65,7 +65,6 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
     @Override
     public void start(Stage primaryStage)
     {
-        database.Connect();
         primaryStage.setTitle("The Snail Sale");
         primaryStage.setResizable(false);
         Image icon = new Image("./icon.jpg");
@@ -92,6 +91,7 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
 
         nevSzerint.setLayoutX(10);
         nevSzerint.setLayoutY(60);
+        nevSzerint.setSelected(true);
         nevSzerint.setToggleGroup(keresoGroup);
 
         arSzerint.setLayoutX(10);

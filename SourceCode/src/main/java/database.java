@@ -1,3 +1,5 @@
+import javafx.scene.control.Alert;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -14,6 +16,16 @@ public class database
     static ResultSet  rs   = null;
     static Statement  st   = null;
     static Connection conn = null;
+
+    public static void alert(String message)
+    {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Stuff");
+        alert.setHeight(200);
+        alert.setContentText(message);
+
+        alert.showAndWait();
+    }
 //st.executeUpdate(lekerdezes);
     public static void Connect()
     {
@@ -34,24 +46,65 @@ public class database
         }
     }
 
-    public static void Query()
+    public static void CloseConnection()
     {
-        try {
-            st   = conn.createStatement();
-            rs   = st.executeQuery("select * from users");
-            while(rs.next()) {
-                String username = rs.getString(1);
-                String email = rs.getString(2);
-                String password = rs.getString(3);
-
-                mainPage.aruInfo.setText(username + " " + email + " " + password);
-            }
+        try
+        {
+            rs.close();
+            st.close();
+            conn.close();
         }
         catch (SQLException e)
         {
-            System.out.println("Nem sikerult a kereses!");
+            e.printStackTrace();
         }
-
     }
 
+    public static void Query()
+    {
+        Connect();
+        String name = mainPage.keresoSzoveg.getText();
+        String type = "name";
+        String order = "name";
+
+        mainPage.keresesEredmenye.getItems().clear();
+
+        if(mainPage.nevSzerint.isSelected())
+            type = "name";
+
+        else if(mainPage.arSzerint.isSelected())
+            type = "price";
+
+        else if(mainPage.ertekelesSzerint.isSelected())
+            type = "rating";
+
+        else
+            order = "name";
+
+        if(mainPage.rendezes.getValue() == "Név szerint csökkenő")
+            order = "name desc";
+
+        else if(mainPage.rendezes.getValue() == "Ár szerint növekvő")
+            order = "price";
+
+        //if(mainPage.rendezes.getValue() == "Ár szerint csökkenő")
+        else
+            order = "price desc";
+
+        try {
+            st   = conn.createStatement();
+            rs   = st.executeQuery("select " + type + " from goods where name like '%"+name+"%' order by " + order);
+            while(rs.next())
+            {
+                String dbname = rs.getString(1);
+
+                mainPage.keresesEredmenye.getItems().add(dbname);
+            }
+            CloseConnection();
+        }
+        catch (SQLException e)
+        {
+            alert("Nem sikerult a kereses, hianyzo adatok!");
+        }
+    }
 }
