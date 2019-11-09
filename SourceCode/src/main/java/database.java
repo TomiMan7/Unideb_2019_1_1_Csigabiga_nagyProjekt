@@ -39,12 +39,13 @@ public class database
         try {
             st   = conn.createStatement();
             rs   = st.executeQuery("select * from users");
+            while(rs.next()) {
+                String username = rs.getString(1);
+                String email = rs.getString(2);
+                String password = rs.getString(3);
 
-            String username = rs.getString(1);
-            String email = rs.getString(2);
-            String password = rs.getString(3);
-
-            mainPage.aruInfo.setText(username + " " + email + " " + password);
+                mainPage.aruInfo.setText(username + " " + email + " " + password);
+            }
         }
         catch (SQLException e)
         {
