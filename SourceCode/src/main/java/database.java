@@ -78,17 +78,16 @@ public class database
         else if(mainPage.ertekelesSzerint.isSelected())
             type = "rating";
 
-        else
+        if(mainPage.rendezes.getValue() == "Név szerint növekvő")
             order = "name";
 
-        if(mainPage.rendezes.getValue() == "Név szerint csökkenő")
+        else if(mainPage.rendezes.getValue() == "Név szerint csökkenő")
             order = "name desc";
 
         else if(mainPage.rendezes.getValue() == "Ár szerint növekvő")
             order = "price";
 
-        //if(mainPage.rendezes.getValue() == "Ár szerint csökkenő")
-        else
+        else//if(mainPage.rendezes.getValue() == "Ár szerint csökkenő")
             order = "price desc";
 
         try {
