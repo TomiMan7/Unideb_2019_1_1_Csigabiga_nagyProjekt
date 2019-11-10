@@ -1,3 +1,4 @@
+import com.fasterxml.classmate.GenericType;
 import javafx.scene.control.Alert;
 
 import java.sql.Connection;
@@ -49,7 +50,6 @@ public class database
 
     public static void CloseConnection()
     {
-
         try
         {
             conn.createStatement();
@@ -106,5 +106,34 @@ public class database
         {
             alert("Nem sikerult a kereses, hianyzo adatok!");
         }
+    }
+
+    public static int KosarbaTesz(String input)
+    {
+        int dbnumber = 0;
+        String type = "name";
+
+        if(mainPage.nevSzerint.isSelected())
+            type = "name";
+
+        else if(mainPage.arSzerint.isSelected())
+            type = "price";
+
+        else if(mainPage.ertekelesSzerint.isSelected())
+            type = "rating";
+
+        try {
+            st   = conn.createStatement();
+            rs   = st.executeQuery("select number from goods where "+ type + " like '"+ input +"'");
+            while(rs.next())
+            {
+                dbnumber = rs.getInt(1);
+            }
+        }
+        catch (SQLException e)
+        {
+            alert("Nem sikerult a kosarba valo lekerdezes!");
+        }
+        return dbnumber;
     }
 }

@@ -1,8 +1,12 @@
+import java.util.Vector;
+
 /**
  * A mainPage GUI-hoz tartozo fuggvenyeket tartalmazza.
  */
 public class mainPageController
 {
+    public static Vector kosar = new Vector();
+
     public static void loginShow()
     {
         login login = new login();
@@ -19,6 +23,16 @@ public class mainPageController
     {
         cart cart = new cart();
         cart.cartShow();
+    }
+
+    public static void kosarbaTeszem()
+    {
+        if(kosar.size() <= 2)
+        kosar.add(database.KosarbaTesz((String) mainPage.keresesEredmenye.getValue()));
+
+        else
+            database.alert("Tele a kosar!");
+        //mainPage.aruInfo.setText( kosar.elementAt(0).toString() );
     }
 
 }

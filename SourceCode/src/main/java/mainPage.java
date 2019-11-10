@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 public class mainPage extends Application implements EventHandler<ActionEvent>
 {
 
-    Stage mainPageStage = new Stage();
+    public static Stage mainPageStage = new Stage();
 
     Button bejelentkezes = new Button("Bejelentkezés");
     Button vasarlashoz = new Button("Tovább a vásárlához!");
@@ -27,10 +27,14 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
     Label kosarTartalma = new Label("Kosár Tartalma:");
     Label bejelentkezettNeve = new Label("Nincs bejelentkezve!");
     Label talalatokSzama = new Label("Találatok száma:");
-    Label termekadat1 = new Label("Termekadat:");
-    Label termekadat2 = new Label("Termekadat:");
-    Label termekadat3 = new Label("Termekadat:");
-    Label termekadat4 = new Label("Termekadat:");
+    Label termekadatCikkszam = new Label("Cikkszám:");
+    Label CikkszamLabel = new Label("ASD");
+    Label NevLabel = new Label("ASD");
+    Label ArLabel = new Label("ASD");
+    Label RatingLabel = new Label("ASD");
+    Label termekadatNev = new Label("Név:");
+    Label termekadatAr = new Label("Ár:");
+    Label termekadatRating = new Label("Értékelés:");
     Label ertekeloLabel = new Label("Értékelje a terméket!");
 
     public static RadioButton nevSzerint = new RadioButton("Név szerinti keresés");
@@ -82,7 +86,6 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
             database.CloseConnection();
             System.out.println("connection closed");
             primaryStage.close();
-
         });
 
         rectangle.setFill(null);
@@ -133,17 +136,25 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
         kosar.setLayoutX(600);
         kosar.setLayoutY(30);
 
-        termekadat1.setLayoutX(500);
-        termekadat1.setLayoutY(90);
+        termekadatCikkszam.setLayoutX(500);
+        termekadatCikkszam.setLayoutY(90);
+        CikkszamLabel.setLayoutX(560);
+        CikkszamLabel.setLayoutY(90);
 
-        termekadat2.setLayoutX(500);
-        termekadat2.setLayoutY(120);
+        termekadatNev.setLayoutX(500);
+        termekadatNev.setLayoutY(120);
+        NevLabel.setLayoutX(530);
+        NevLabel.setLayoutY(120);
 
-        termekadat3.setLayoutX(500);
-        termekadat3.setLayoutY(150);
+        termekadatAr.setLayoutX(500);
+        termekadatAr.setLayoutY(150);
+        ArLabel.setLayoutX(520);
+        ArLabel.setLayoutY(150);
 
-        termekadat4.setLayoutX(500);
-        termekadat4.setLayoutY(180);
+        termekadatRating.setLayoutX(500);
+        termekadatRating.setLayoutY(180);
+        RatingLabel.setLayoutX(560);
+        RatingLabel.setLayoutY(180);
 
         kosarba.setLayoutX(620);
         kosarba.setLayoutY(280);
@@ -223,10 +234,14 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
         layout.getChildren().add(kosarTartalma);
         layout.getChildren().add(bejelentkezettNeve);
         layout.getChildren().add(talalatokSzama);
-        layout.getChildren().add(termekadat1);
-        layout.getChildren().add(termekadat2);
-        layout.getChildren().add(termekadat3);
-        layout.getChildren().add(termekadat4);
+        layout.getChildren().add(termekadatCikkszam);
+        layout.getChildren().add(CikkszamLabel);
+        layout.getChildren().add(termekadatNev);
+        layout.getChildren().add(NevLabel);
+        layout.getChildren().add(termekadatAr);
+        layout.getChildren().add(ArLabel);
+        layout.getChildren().add(termekadatRating);
+        layout.getChildren().add(RatingLabel);
         layout.getChildren().add(ertekeloLabel);
 
         /*RadioButtons*/
@@ -248,12 +263,12 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
         layout.getChildren().add(aruInfo);
 
         /*InputHandling*/
-        bejelentkezes.setOnAction(this);
-        vasarlashoz.setOnAction(this);
-        kereses.setOnAction(this);
+        bejelentkezes.setOnAction(this); //done
+        vasarlashoz.setOnAction(this); //done
+        kereses.setOnAction(this); //done
         elozo.setOnAction(this);
         kovetkezo.setOnAction(this);
-        kosar.setOnAction(this);
+        kosar.setOnAction(this); //done
         kosarba.setOnAction(this);
         ertekel.setOnAction(this);
 
@@ -283,7 +298,11 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
         }
         if(actionEvent.getSource() == kereses)
         {
-            database.Query();
+            database.Kereses();
+        }
+        if(actionEvent.getSource() == kosarba)
+        {
+            mainPageController.kosarbaTeszem();
         }
     }
 }
