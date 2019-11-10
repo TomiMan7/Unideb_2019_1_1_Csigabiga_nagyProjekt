@@ -120,6 +120,17 @@ könnyebb fejlesztés érdekében.
 
 -Absztrakt domain modell 
 
+Minden oldalról közvetetten vagy közvetlenül vissza lehet navigálni a fõoldalra.
+Az alkalmazáson belül az oldalak és panelek megfelelõen összekapcsolódnak, és
+gördülékenyen átvált egyik oldalról a másikra. Ezek fõként gombok segítségével 
+valósulnak meg. Például a bejelentkezés oldal a fõoldalról elérhetõ egy be/kijelentkezés
+gomb segítségével, errõl az oldalról pedig tovább mozoghatunk a regisztrációs panelra.
+A szoftver adatbázisból dolgozik, innen jelenítni meg a termékeket és a hozzá tartozó
+adatokat. Majd a kiválasztott termékeket átvihetjük a kosár oldalára. Ezután a 
+véglegesítés során a személyes infókat is fel kell vinnünk, és ezeket az adatokat 
+a termékekkel együtt kell eljuttatnunk az ezzel foglalkozó munkatárshoz, aki felveszi
+a rendeléseket. Ez adatbázis segítségével fog történni, így az adminisztrátorként dolgozó
+munkatárs is könnyedén áttekintheti melyik termékbõl és kinek kell kiküldeni.
 
 -Architekturális terv 
 
