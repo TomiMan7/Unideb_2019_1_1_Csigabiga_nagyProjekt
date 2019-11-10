@@ -67,6 +67,36 @@ felsorakoztatott termékekkel.
 Összefoglaló képformájában: lásd: uzletifolyamatok.jpg
 
 -Követelmények 
+
+
+Funkcionális követelményekhez tartozik az egyszerûen használható, felhasználóbarát
+felület, ahol az elemek érthetõen vannak megfogalmazva és egyértelmû az elemek
+funkciója. A program gyorsan letölthetõ, könnyen elérhetõ és internet kapcsolat
+mellett jól mûködik. A folyamat és a mûködés célja az, hogy a felhasználó hozzá-
+juthasson a kívánt termékhez. A termékek listája és az adatbázis folyamatosan 
+frissülõ és mindig aktuális. Az alkalmazás mindig elérhetõ legyen (a karbantartás
+idõszaka képezhet kivételt), valamint a használata gördülékeny és gyors.
+A regisztrációval mindig tudjon a felhasználó profilt létrehozni, de ne lehessen
+két egyforma felhasználó nevû vásárló. A bejelentkezés helyes megadott adatok
+esetén legyen sikeres. A szoftver felismerje, ha még nem regisztrált felhasználó 
+próbálja használni és bejelentkezni. A felasználó nevet és jelszót megfelelõen
+és törvényeknek megfelelõen kell kezelni. Ezt a felhasználók és az ott dolgozók
+nem tekinthetik meg adatvédelmi okokból.
+Bejelentkezett felhasználó esetén a termékek kosárba tehetõk és megvásárolhatóak
+A személyes és szállításhoz szükséges információkkal kitöltött oldal továbbításra 
+kerül a kosárba rakott termékekkel együtt. Így az adminisztrátor segítségével 
+továbbításra kerül mik a szállítandó termékek és hova kell szállítani, valamint
+komplikáció esetén hol lehet értesíteni a felhasználót.
+Nem funkcionális követelmények szempontjából a középpontban az egyszerûen kezelhetõ
+felület áll, hogy a felhasználók elõszeretettel használhassák a szoftvert. A gombok
+egyértelmûen használhatóak, és elérhetõek az elhelyezésük szempontjából is. 
+Az elrendezés is segíti a vásárlót a gördülékeny használathoz. A szövegek és a
+különbözõ karakterek jól olvashatóak, eltérnek a háttér színétõl, és egyszerûen
+észrevehetõek. Az alkalmazásban nem megengedett a sértõ tartalom megjelenítése,
+szabadon kitölthetõ szöveges mezõket a felhasználóknak is a kért tartalomnak
+megfelelõen kell kitölteni. Nem megfelelõ használat esetén az adminisztrátoroknak,
+illetve a készítõknek lehetõségük van az adott felasználót eltávolítani az adatbázisból.
+
 -Funkcionális terv 
 -Fizikai környezet
 Az applikációt a Java programozási nyelvnek a használatával fogjuk
