@@ -13,8 +13,8 @@ import java.sql.Statement;
 public class database
 {
     public static String connection = "";
-    static ResultSet  rs   = null;
-    static Statement  st   = null;
+    static ResultSet  rs = null;
+    static Statement  st = null;
     static Connection conn = null;
 
     public static void alert(String message)
@@ -29,12 +29,12 @@ public class database
 //st.executeUpdate(lekerdezes);
     public static void Connect()
     {
-        String AdatbazisElerhetosege = new String("127.0.0.1");
-        String Felhasznalonev        = new String("root");
-        String AdatbazisAzonosito    = new String("csiga");
-        String Jelszo             = new String("");
-        connection = "jdbc:mysql://" + AdatbazisElerhetosege + "/" + AdatbazisAzonosito + "?user=" + Felhasznalonev+ "&password=" + Jelszo;
-        //connection = "jdbc:mysql://127.0.0.1/csiga?user=root&password= ";
+//        String AdatbazisElerhetosege = new String("127.0.0.1");
+//        String Felhasznalonev        = new String("root");
+//        String AdatbazisAzonosito    = new String("csiga");
+//        String Jelszo             = new String("");
+//        connection = "jdbc:mysql://" + AdatbazisElerhetosege + "/" + AdatbazisAzonosito + "?user=" + Felhasznalonev+ "&password=" + Jelszo;
+        connection = "jdbc:mysql://127.0.0.1/csiga?user=root&password= ";
 
         try
         {
@@ -42,16 +42,19 @@ public class database
         }
         catch (SQLException e)
         {
-            System.out.println(e);
+            //System.out.println(e);
+            alert("Nem elerheto az adatbazis!");
         }
     }
 
     public static void CloseConnection()
     {
+
         try
         {
-            rs.close();
-            st.close();
+            conn.createStatement();
+            //rs.close();
+            //st.close();
             conn.close();
         }
         catch (SQLException e)
@@ -60,9 +63,8 @@ public class database
         }
     }
 
-    public static void Query()
+    public static void Kereses()
     {
-        //Connect();
         String name = mainPage.keresoSzoveg.getText();
         String type = "name";
         String order = "name";
@@ -99,7 +101,6 @@ public class database
 
                 mainPage.keresesEredmenye.getItems().add(dbname);
             }
-            //CloseConnection();
         }
         catch (SQLException e)
         {
