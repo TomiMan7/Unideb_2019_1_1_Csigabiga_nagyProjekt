@@ -3,6 +3,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
@@ -16,7 +17,7 @@ import javafx.stage.Stage;
  */
 public class login
 {
-    Button bejelentkezes = new Button("Bejelentkezés");
+    static Button bejelentkezes = new Button("Bejelentkezés");
     static Button regisztracio = new Button("Regisztráció");
 
     Label info = new Label("Kérem jelentkezzen be!");
@@ -25,9 +26,8 @@ public class login
     Label felhasznalonev = new Label("Felhasználónév:");
     Label jelszo = new Label("Jelszó:");
 
-    TextField felhasznalonevText = new TextField();
-    TextField jelszoText = new TextField();
-
+    static TextField felhasznalonevText = new TextField();
+    static PasswordField jelszoText = new PasswordField();
 
     public void loginShow()
     {
@@ -44,6 +44,12 @@ public class login
 
         primaryStage.setScene(scene);
         primaryStage.show();
+
+        primaryStage.setOnCloseRequest( event ->
+        {
+            primaryStage.close();
+            loginController.mainPageShow();
+        });
 
         info.setLayoutX(200);
         info.setLayoutY(20);
@@ -80,7 +86,7 @@ public class login
         layout.getChildren().add(felhasznalonevText);
         layout.getChildren().add(jelszoText);
 
-        regisztracio.setOnAction(login::handle);
+        regisztracio.setOnAction(login::handle); //done
         bejelentkezes.setOnAction(login::handle);
 
     }
@@ -92,6 +98,19 @@ public class login
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
             loginController.registrationShow();
         }
-
+        if(actionEvent.getSource() == bejelentkezes)
+        {
+            if(loginController.LoginCheck())
+            {
+                if(database.Login())
+                {
+                    ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
+                    loginController.mainPageShow();
+                    loginController.setLogin();
+                }
+                else
+                    database.alert("Hibas felhasznalonev vagy jelszo!");
+            }
+        }
     }
 }

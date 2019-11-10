@@ -25,7 +25,7 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
     Button ertekel = new Button("Értékelem!");
 
     Label kosarTartalma = new Label("Kosár Tartalma:");
-    Label bejelentkezettNeve = new Label("Nincs bejelentkezve!");
+    public static Label bejelentkezettNeve = new Label("Nincs bejelentkezve!");
     Label talalatokSzama = new Label("Találatok száma:");
     Label termekadatCikkszam = new Label("Cikkszám:");
     Label CikkszamLabel = new Label("ASD");
@@ -269,12 +269,12 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
         elozo.setOnAction(this);
         kovetkezo.setOnAction(this);
         kosar.setOnAction(this); //done
-        kosarba.setOnAction(this);
+        kosarba.setOnAction(this); //done
         ertekel.setOnAction(this);
 
-        nevSzerint.setOnAction(this);
-        arSzerint.setOnAction(this);
-        ertekelesSzerint.setOnAction(this);
+//        nevSzerint.setOnAction(this);
+//        arSzerint.setOnAction(this);
+//        ertekelesSzerint.setOnAction(this);
 
         rendezes.setOnAction(this);
         keresesEredmenye.setOnAction(this);
@@ -285,6 +285,7 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
     {
         if (actionEvent.getSource() == bejelentkezes)
         {
+            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
             mainPageController.loginShow();
         }
         if(actionEvent.getSource() == vasarlashoz)

@@ -1,4 +1,3 @@
-import com.fasterxml.classmate.GenericType;
 import javafx.scene.control.Alert;
 
 import java.sql.Connection;
@@ -135,5 +134,33 @@ public class database
             alert("Nem sikerult a kosarba valo lekerdezes!");
         }
         return dbnumber;
+    }
+
+    public static boolean Login()
+    {
+        String dbusername = "";
+        String dbpassword = "";
+        try {
+            st   = conn.createStatement();
+            rs   = st.executeQuery("select username, password from users where username like '"+login.felhasznalonevText.getText()
+                    +"' and password like '"+login.jelszoText.getText()+"'");
+            while(rs.next())
+            {
+                dbusername = rs.getString(1);
+                dbpassword = rs.getString(2);
+            }
+
+            if(dbusername.equals(login.felhasznalonevText.getText()) && dbpassword.equals(login.jelszoText.getText()))
+                return true;
+
+            else
+                return false;
+        }
+        catch (SQLException e)
+        {
+            System.out.println(e);
+            alert("Nem sikerult a bejelentkezes!");
+        }
+        return true;
     }
 }
