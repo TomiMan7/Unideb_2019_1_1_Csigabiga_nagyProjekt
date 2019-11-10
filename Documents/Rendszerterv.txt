@@ -117,8 +117,44 @@ minimális rendszerkövetelményein felül ajálnlatos egy 2 magos processzor,
 könnyebb fejlesztés érdekében.
 	Az online adatbázis kezeléséhez pedig phpMyadmint.
 	Az adatbázis szerverhez például wamp vagy xamp szerver is használható. 
+
 -Absztrakt domain modell 
+
+
 -Architekturális terv 
+
+Az alkalmazás alapvetõen egy fõoldalból, bejelentkezõ, regisztrációs oldalból, a kosár,
+a kosár tartalmának véglegesítése, a vásárlás véglegesítése és az ezekhez szüséges
+személyes infók panelbõl áll. A szoftver struktúráját tekintve nem funkcionális elemek
+módosítására folyamatosan van lehetõség. A vágyálom rendszerben korábban felvetett
+ötletek megvalósítása a továbbiakban van mód és lehetõség, ha az igényt megkapjuk.
+A változtatások, különbözõ módosítások a felületen várhatóak. A változtatásokon kívül
+a program bõvíthetõ elemekkel. 
+A képernyõtervek alapján készülne el a program.
+A fõoldal a tervek szerint balról jobbra egy keresõsávból, és egy sorrendet módosító
+részbõl áll, amit egy keresés gombbal tuunk mûködtetni. Az olddal közeépsõ részén
+találhatóak a termékek az adataikkal, felette a rendezés feltétele, és mellette a kosár
+gomb, amivel a kosár oldalára navigálhat a felhasználó. A képernyõ közepén, ahol az adott
+termék látható, megjelenik egy kosárba gomb is, amivel kosárba lehet helyezni az éppen
+megtekintett terméket. A termékeket az elõzõ és a következõ gombokkal lapozhatjuk. 
+A fõoldal jobb oldalán egy be/kijelentkezés gomb található, alatta a termék értékelése
+rész, és egy vásárláshoz gomb, ami a vásárláshoz irányít tovább.
+A keresés gombbal szükíthetjük a megjelenõ termékek listáját és ezeket sorrendbe is
+állíthatjuk. (ugyanúgy a fõoldalon maradunk) 
+A kosár gomb átirányít minket a kosár oldalra, ahol továbbugorhatunk a vásárlás oldalra
+egy gombbal, vagy vissza a fõoldalra. A kosárba rakott termékek kilistázódnak, amiket 
+az eltávolítás gombbal eltüntethetünk a listából. 
+A bejelentkezés oldalra ezzel a gombbal irányíthatjuk át magunkat. Itt csak bejelentkezésre
+vagy továbbugrani a regisztrációhoz van lehetõség. Regisztrációnál felhasználónevet,
+email címet és jelszót kérünk be. Ha a mése gombra kattintunk, visszakerülünk a fõoldalra.
+Majd ha a vásárlás gombra kattintunk ki kell töltenünk a személyes információkkal egy 
+új lapot. Ezzel továbbugrunk a véglegesítésshez, ahol a kosárban lévõ elemeket és a 
+személyes infókat még egyszer áttekintheti a vásárló. A véglegesítés gombbal leadja a
+rendelést.
+A rendszer bõvíthatõ további lapokkal. A meglévõ lapokon belül bõvíthetõ funkcionális és
+nem funkcionális elemekkel. Több helyen megjeleíthetõ kép vagy a logó, amennyiben újabb
+igény érkezik be ezzel kapcsolatban. 
+
 -Adatbázis terv
 	Programunk a tárolandó adatokat, online adatbázisban fogja tárolni.
 Online felületnek a phpmyadmint fogjuk használni.  Tesztelési fázisban,
