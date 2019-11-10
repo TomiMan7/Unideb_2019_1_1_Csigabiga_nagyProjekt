@@ -30,7 +30,42 @@ felhasználót, további vásárlásra adva lehetõséget.
 felvétele az adatbázisba, így arra nem is kínál lehetõséget a program.
 Nem célja a termékek szöveges értékelése se, így csak egy 1-tõl 5-ig,
 egész számokat tartalmazó skálán értékelhetik a regisztrált felhasználók a termékeket.
+
+
 -Üzleti folyamatok modellje
+
+A szoftver abból a célból készül, hogy a felhasználók (vásárlók) könnyen
+elérhessék a számukra szükséges termékeket, a lehetõ leggyorsabb és leg-
+kényelmesebb módon. Maga az üzleti folyamat része a szoftver használata.
+Ehhez a szükséges szereplõk a felhasználók, és az adminisztrátorok, 
+valamint egy megfelelõen mûködõ és kezelhetõ adatbázis, a felhasználók
+fiókjaival, valamint a termékek listájával.
+A programot a felhasznáó eléri, majd elindítja, ezzel indul a folyamat.
+Ha a felhasználó elõször akarja használni a szoftvert, akkor regisztrálnia
+kell. A megadott adatok az adatbázisban tárolódni fognak, ezért a
+továbbiakban elegendõ bejelentkeznie a korábban megadott adatokkal.
+A bejelentkezés egy adatbázisban való keresés segítségével végzi el a program.
+A megfelelõ felhasználó és jelszó kombinációjának beírásával ez a
+folyamat sikeres, így eléri a további folyamatokat, amik a vásárláshoz
+szükségesek. A másik üzleti szereplõ az adminisztrátor.
+Ahhoz, hogy a vásárló böngészhessen a termékek között, a programot adatokkal
+kell feltölteni, amit a felhasználó olvashat és láthat. Az adatbázis feltöltése
+és módosítása az adminisztrátor dolga. Mivel a termékek száma és elérhetõsége
+változó, így ezt fontos karbantartani. 
+Ezután a felhasználó megtekintheti a feltöltött termékeket, kiválaszthatja,
+hogy számára melyik szükséges, majd megvásárolhatja. A termék kiválasztása
+után a felhasználó kitölt egy szállítással és fizetéssel kapcsolatos oldalt,
+majd a vásárlásra kattint. Az igény pedig az adminisztrátorhoz érkezik be,
+ami a felhasznló által kitöltött adatokkal és a kiválasztott termékekkel együtt
+érkezik be. Az entitás maga a SnailSale vásárlásra kitalált program, a benne
+felsorakoztatott termékekkel.
+Összefoglaló: Üzleti szereplõk: felhasználó, adminisztrátor, (adatbázis)
+	Üzleti folyamatok: bejelentkezés, regisztráció -> azonosítás
+			adatbázis feltöltése -> termékek böngészése, vásárlás
+			vásárlás -> beérkezik az igény a vásárlásról
+	Üzleti entitás: SnailSale és annak termékei
+Összefoglaló képformájában: lásd: uzletifolyamatok.jpg
+
 -Követelmények 
 -Funkcionális terv 
 -Fizikai környezet
