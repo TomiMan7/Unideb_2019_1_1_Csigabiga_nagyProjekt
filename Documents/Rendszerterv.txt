@@ -389,3 +389,11 @@ több eszközrõl (amin a program telepítve van)is hozzáférhetnek az adatokhoz.
 A program fizikai környezetének információi fentebb olvashatóak.
 
 -Karbantartási terv 
+A szoftver internetkapcsolat segítségével a telepítési hellyel megegyezõ helyre
+kerülnének ki a frissítések, és az új verziók. A teszttervek az új igények alapján
+készülnének el. A regressziós tesztet minden frissítés és új verzió alkalmával 
+elvégezzük. Ezek a a teszttervek menüpontban olvashatóak.
+A tapasztalatok gyûjtése, dokumentálása segítséget nyújt majd a késõbbi fejlesztések
+ során/folyamatfejlesztéshez, hogy milyen újítások legyenek, milyen hibák vannak,
+vagy karbantartási céllal is készülhetnek. 
+Továbbá a gyakori frissitések megnövelik a karbantartás költségeit.
