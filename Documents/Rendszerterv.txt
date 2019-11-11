@@ -340,6 +340,36 @@ osztály
 
 -Tesztterv
 
+A tesztelés során a teszt tárgya lehet a rendszer azon része, amelyet tesztelünk, 
+ez lehet az egész rendszer is. A mi esetunkben teszteseteket fogunk megnézni, 
+és manuálisan tesztelni, ezzel lefedve az egész rendszert. Tesztbázis azon  
+dokumentumok  összessége,  amelyek  a  teszt  tárgyára  vonatkozó követelményeket
+tartalmazzák: Követelmény specifiáció és funkcionális specifikáció. 
+A tesztelés során ellenõrizzük, hogy a felhasználói felület megfelelõen betöltõdött,
+a keresés, a gombok és a kattintható felületek megfelelõen mûködnek.
+Ha a felület betöltõdött, akkor gombok(Kosár,Regisztráció,Belépés stb), 
+keresés és egyéb kattintható felületet vizsgáljuk, megjelenik-e minden opció, 
+amiket a fejlesztés során implementáltak. 
+Az eddig elkészített program tesztesetei:
+	A program megfelelõen, hibamentesen elindul, majd a felület betölt. 
+	A felület a képernyõterv szerint jelenik meg, kivéve a Kosár(javítás alatt áll).
+	Az elindítás utáni felületen több gomb és keresési mezõ is látható.
+	A gombok kattinthatóak. A keresés maunális tesztelése még nem lehetséges, 
+	mivel a program még nincs teljesen kész, fejlesztés alatt áll.
+	A Kosát gombra kattintva behozza a kosár tartalmát(még üresen), ez még nincs tejesen kész.
+	Innen visszalehet ugrani a fõ felületre, vagy pedig a pénztárhoz, de elõtte még
+	felugrik egy ablak, a személyes információkért.
+	A feladat egyik fõ része a regisztráció és a bejelentkezés.
+	A Belépésre kattintva átvált a erre az oldalra és kér egy felhasználónevet, jelszót.
+	Még nem lehet belépni, vagy beregisztrálni.
+	Ha még nincs fiók akkor tovább kell lépni a regisztrációhoz.
+	Itt majd meg kell adni felhasználónevet, email címet és jelszót, amikell késõbb majd be tudnak jelentkezni.
+	Ezek a tesztesetek mûködõképesek, a gombok kattinthatóák, a program mostani állása szerint, 
+	ha rányomunk egy adott gombra, akkor átvisz minket a megfelelõ felületre.
+	A program hiányossága miatt a keresés, értékelés, belépés és regisztráció még nem 
+	lehetséges, de ezt a késõbbiekben korrigaljuk, fejlesztés alatt van.
+	A fenti tesztelések manuálisan történtek.
+
 -Telepítési terv 
 
 -Karbantartási terv 
