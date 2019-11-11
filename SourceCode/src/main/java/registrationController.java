@@ -27,6 +27,4 @@ public class registrationController
         else
             return true;
     }
-
-
 }

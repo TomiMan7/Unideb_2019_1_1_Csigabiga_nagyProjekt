@@ -38,6 +38,11 @@ public class cart
 
         primaryStage.show();
 
+        primaryStage.setOnCloseRequest( event ->
+        {
+            primaryStage.close();
+            cartController.mainPageShow();
+        });
         info.setLayoutX(200);
         info.setLayoutY(20);
         penztarhoz.setLayoutX(80);

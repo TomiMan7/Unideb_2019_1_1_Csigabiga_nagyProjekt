@@ -23,14 +23,9 @@ public class database
 
         alert.showAndWait();
     }
-//st.executeUpdate(lekerdezes);
+
     public static void Connect()
     {
-//        String AdatbazisElerhetosege = new String("127.0.0.1");
-//        String Felhasznalonev        = new String("root");
-//        String AdatbazisAzonosito    = new String("csiga");
-//        String Jelszo             = new String("");
-//        connection = "jdbc:mysql://" + AdatbazisElerhetosege + "/" + AdatbazisAzonosito + "?user=" + Felhasznalonev+ "&password=" + Jelszo;
         connection = "jdbc:mysql://127.0.0.1/csiga?user=root&password= ";
 
         try
@@ -39,7 +34,6 @@ public class database
         }
         catch (SQLException e)
         {
-            //System.out.println(e);
             alert("Nem elerheto az adatbazis!\n\n" + e);
         }
     }
@@ -49,14 +43,11 @@ public class database
         try
         {
             conn.createStatement();
-            //rs.close();
-            //st.close();
             conn.close();
         }
         catch (SQLException e)
         {
             alert("Nem sikerult a kapcsolatot zarni!\n" + e);
-            e.printStackTrace();
         }
     }
 
@@ -86,7 +77,7 @@ public class database
         else if(mainPage.rendezes.getValue() == "Ár szerint növekvő")
             order = "price";
 
-        else//if(mainPage.rendezes.getValue() == "Ár szerint csökkenő")
+        else
             order = "price desc";
 
         try {
@@ -166,10 +157,11 @@ public class database
         String dbusername = registration.felhasznalonevText.getText();
         String dbemail = registration.emailText.getText();
         String dbpassword = registration.jelszoText.getText();
-        try {
+        try
+        {
             st   = conn.createStatement();
             st.executeUpdate("INSERT INTO users (`username`, `email`, `password`) VALUES ('"+dbusername+"', '"+dbemail+"', '"+dbpassword+"')");
-            }
+        }
         catch (SQLIntegrityConstraintViolationException e)
         {
             alert("Foglalt felhasznalonev vagy email!");
@@ -180,7 +172,6 @@ public class database
             alert("Nem sikerult a regisztracio!\n" + e);
             return false;
         }
-
         return true;
     }
 }

@@ -272,10 +272,6 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
         kosarba.setOnAction(this); //done
         ertekel.setOnAction(this);
 
-//        nevSzerint.setOnAction(this);
-//        arSzerint.setOnAction(this);
-//        ertekelesSzerint.setOnAction(this);
-
         rendezes.setOnAction(this);
         keresesEredmenye.setOnAction(this);
     }
@@ -295,6 +291,7 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
         }
         if(actionEvent.getSource() == kosar)
         {
+            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
             mainPageController.cartShow();
         }
         if(actionEvent.getSource() == kereses)
