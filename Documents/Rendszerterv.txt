@@ -372,4 +372,20 @@ Az eddig elkészített program tesztesetei:
 
 -Telepítési terv 
 
+Meghatározzuk, hogy mikor és milyen módon lesz elérhetõ a szoftvertermék a 
+végfelhasználók számára. Szükséges az ügyfelekkel való együttmûködés és az elõkészületek is.
+Gyakran a szoftver fejlesztésétõl független tényezõk határozzák meg 
+egy szoftvertermék bevezetését, például a hardver infrastruktúra hiánya, 
+vagy a nem megfelelõen képzett felhasználók.
+A gördülékenység érdekében telepítési csomagot kell létrehozni. A telepítési 
+csomag a kifejlesztett szoftver mellett azokat a szoftvereket is tartalmazza, 
+amelyek az installáláshoz és a használathoz szükségesek. A telepítõ szoftver 
+biztosítja a szoftver komponensek hozzárendelését a megfelelõ hardver elemekhez.
+A késõbbiekben a program megrendelésének és letöltésének lehetõvé tétele az interneten keresztül. 
+A program elsõ verziójában a szoftver csak lokálisan mûködne, így a felhasználó
+a telepítés után az éppen használt eszközön tudná igénybe venni a szolgáltatást.
+Majd a webes adattárolás segítségével a felhasználók internetkapcsolat segítségével
+több eszközrõl (amin a program telepítve van)is hozzáférhetnek az adatokhoz.
+A program fizikai környezetének információi fentebb olvashatóak.
+
 -Karbantartási terv 
