@@ -21,7 +21,8 @@ public class database
     {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Stuff");
-        alert.setHeight(200);
+        alert.setHeight(500);
+        alert.setWidth(200);
         alert.setContentText(message);
 
         alert.showAndWait();
@@ -43,7 +44,7 @@ public class database
         catch (SQLException e)
         {
             //System.out.println(e);
-            alert("Nem elerheto az adatbazis!");
+            alert("Nem elerheto az adatbazis!\n\n" + e);
         }
     }
 
@@ -58,6 +59,7 @@ public class database
         }
         catch (SQLException e)
         {
+            alert("Nem sikerult a kapcsolatot zarni!\n" + e);
             e.printStackTrace();
         }
     }
@@ -103,7 +105,7 @@ public class database
         }
         catch (SQLException e)
         {
-            alert("Nem sikerult a kereses, hianyzo adatok!");
+            alert("Nem sikerult a kereses, hianyzo adatok!\n" + e);
         }
     }
 
@@ -131,7 +133,7 @@ public class database
         }
         catch (SQLException e)
         {
-            alert("Nem sikerult a kosarba valo lekerdezes!");
+            alert("Nem sikerult a kosarba valo lekerdezes!\n" + e);
         }
         return dbnumber;
     }
@@ -158,8 +160,7 @@ public class database
         }
         catch (SQLException e)
         {
-            System.out.println(e);
-            alert("Nem sikerult a bejelentkezes!");
+            alert("Nem sikerult a bejelentkezes!\n" + e);
         }
         return true;
     }
