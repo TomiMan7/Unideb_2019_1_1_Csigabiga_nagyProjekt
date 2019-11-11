@@ -1,10 +1,6 @@
 import javafx.scene.control.Alert;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 /**
  * Ebbe az osztályba kerülnek azok a függvények amik a programhoz
@@ -162,6 +158,29 @@ public class database
         {
             alert("Nem sikerult a bejelentkezes!\n" + e);
         }
+        return true;
+    }
+
+    public static boolean registration()
+    {
+        String dbusername = registration.felhasznalonevText.getText();
+        String dbemail = registration.emailText.getText();
+        String dbpassword = registration.jelszoText.getText();
+        try {
+            st   = conn.createStatement();
+            st.executeUpdate("INSERT INTO users (`username`, `email`, `password`) VALUES ('"+dbusername+"', '"+dbemail+"', '"+dbpassword+"')");
+            }
+        catch (SQLIntegrityConstraintViolationException e)
+        {
+            alert("Foglalt felhasznalonev vagy email!");
+            return false;
+        }
+        catch (SQLException e)
+        {
+            alert("Nem sikerult a regisztracio!\n" + e);
+            return false;
+        }
+
         return true;
     }
 }

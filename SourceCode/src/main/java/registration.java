@@ -17,8 +17,8 @@ import javafx.stage.Stage;
  */
 public class registration
 {
-    Button regisztracio = new Button("Regisztráció");
-    static Button megse = new Button("Mégse");
+    public static Button regisztracio = new Button("Regisztráció");
+    public static Button megse = new Button("Mégse");
 
     Label info = new Label("Kérjük regisztráljon be először a vásárlás elkezdéséhez");
     Label felhasznalonev = new Label("Felhasználónév:");
@@ -26,10 +26,10 @@ public class registration
     Label jelszo = new Label("Jelszó:");
     Label jelszo2 = new Label("Jelszó mégegyszer:");
 
-    TextField felhasznalonevText = new TextField();
-    TextField emailText = new TextField();
-    PasswordField jelszoText = new PasswordField();
-    PasswordField jelszo2Text = new PasswordField();
+    public static TextField felhasznalonevText = new TextField();
+    public static TextField emailText = new TextField();
+    public static PasswordField jelszoText = new PasswordField();
+    public static PasswordField jelszo2Text = new PasswordField();
 
 
     public void registrationShow()
@@ -47,6 +47,12 @@ public class registration
 
         primaryStage.setScene(scene);
         primaryStage.show();
+
+        primaryStage.setOnCloseRequest( event ->
+        {
+            primaryStage.close();
+            registrationController.mainPageShow();
+        });
 
         info.setLayoutX(100);
         info.setLayoutY(20);
@@ -94,8 +100,8 @@ public class registration
         layout.getChildren().add(jelszoText);
         layout.getChildren().add(jelszo2Text);
 
-        regisztracio.setOnAction(registration::handle);
-        megse.setOnAction(registration::handle);
+        regisztracio.setOnAction(registration::handle); //done
+        megse.setOnAction(registration::handle); //done
 
     }
 
@@ -105,6 +111,17 @@ public class registration
         {
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
             registrationController.loginShow();
+        }
+
+        if(actionEvent.getSource() == regisztracio)
+        {
+            if(registrationController.registrationChechk())
+            {
+                if(database.registration())
+                    registrationController.loginShow();
+            }
+            else
+                database.alert("Hianyzo adatok vagy nem egyezo jelszo!");
         }
 
     }
