@@ -98,7 +98,28 @@ megfelelõen kell kitölteni. Nem megfelelõ használat esetén az adminisztrátorokna
 illetve a készítõknek lehetõségük van az adott felasználót eltávolítani az adatbázisból.
 
 -Funkcionális terv 
+
+A feladat egy számítógépen futó The Snail Sale nevû program megtervezése.
+A program kérje le egy "csiga" nevû adatbázisból a keresési és kiválasztási 
+feltételeknek megfelelõ terméket, mikor a felhasználó éppen a szoftvert használja.
+Továbbá a feladatai között van az értékelés, pl. egy felhasználó megrendeli 
+a számára megfelelõ termékeket, és kiszállítás után van lehetõsége értékelni
+a csomagot. 1-tõl 5-ig tudnak értékelni. Alalpvetõ funkciói közé tartozik a 
+keresés különbözõ szempontok szerint (ár szerint, növekvõ-csökkenõ sorrendben stb.)
+Egy vásárlás ezzel a szoftverrel : A felhasználó bejelentkezés vagy regisztráció után 
+megkeresi a számára fontos termékeket, elolvashatja az adatait majd berakhatja a kosárba. 
+A korárba maximum 3 terméket rakhat, ennyit lehet õsszesen egyszerre vásárolni. 
+A kosárban is megtekintheti a megrendelni kívánt termékeket az adataikkal egyutt. 
+Többszörörs megerõsítés és adategyeztetés után lehet megrendelni, majd 
+kiszállítás után véleményezni és értékelni.A rendszert három szereplõre 
+lehet felbontani, a megrendelõre, felhasználókra és a programozókra. 
+A fejlesztõk megtervezik és implementálják a megrendelõ igényeit. 
+Majd a továbbiakban a felhasználók igényei és észrevételei szerint fogják a 
+programozók fejleszteni a felületet. A felület egyszerû , mégis több egyszerû menü 
+és gomb van a programban. 
+
 -Fizikai környezet
+
 Az applikációt a Java programozási nyelvnek a használatával fogjuk
 elkészíteni.  A 11-es verziót használva, de elõre láthatólag 100%-ban
 csak a 8-as verzió funkcióit felhasználva, azaz teljes mértékben
@@ -317,6 +338,8 @@ elindítja a mainPage.java start függvényet.
 -database.java: Az adatbázist használó és kezelõ függvényeket tartalmazó
 osztály 
 
--Tesztterv 
+-Tesztterv
+
 -Telepítési terv 
+
 -Karbantartási terv 
