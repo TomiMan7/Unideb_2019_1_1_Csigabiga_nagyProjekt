@@ -8,6 +8,8 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.scene.paint.Color;
+imporj javafx.scene.shape.Rectangle;
 
 
 /**
@@ -19,6 +21,18 @@ public class cart
     static Button vissza = new Button("Vissza");
 
     Label info = new Label("A kosár tartalma: ");
+
+    Rectangle termekhelye = new Rectangle(40,100,80,80);
+    Rectangle termekhelye1 = new Rectangle(40,220,80,80);
+    Rectangle termekhelye2= new Rectangle(40, 340, 80, 80);
+
+    Label termekneve = new Label("A termék neve");
+    Label termekneve1 = new Label("A termék neve");
+    Label termekneve2 = new Label("A termék neve");
+
+    Button eltavolitas = new Button("Eltávolítás");
+    Button eltavolitas1 = new Button("Eltávolítás");
+    Button eltavolitas2 = new Button("Eltávolítás");
 
 
     public void cartShow()
@@ -32,7 +46,7 @@ public class cart
 
         Pane layout = new Pane();
 
-        Scene scene = new Scene(layout, 550, 400);
+        Scene scene = new Scene(layout, 550, 500);
 
         primaryStage.setScene(scene);
 
@@ -45,20 +59,68 @@ public class cart
         });
         info.setLayoutX(200);
         info.setLayoutY(20);
+
         penztarhoz.setLayoutX(80);
-        penztarhoz.setLayoutY(80);
+        penztarhoz.setLayoutY(55);
         penztarhoz.setPrefWidth(80);
+
         vissza.setLayoutX(400);
-        vissza.setLayoutY(80);
+        vissza.setLayoutY(55);
         vissza.setPrefWidth(70);
 
+        eltavolitas.setLayoutX(410);
+        eltavolitas.setLayoutY(100);
+        eltavolitas.setPrefWidth(80);
+
+        eltavolitas1.setLayoutX(410);
+        eltavolitas1.setLayoutY(220);
+        eltavolitas1.setPrefWidth(80);
+
+        eltavolitas2.setLayoutX(410);
+        eltavolitas2.setLayoutY(340);
+        eltavolitas2.setPrefWidth(80);
+
+        termekneve.setLayoutX(140);
+        termekneve.setLayoutY(100);
+
+        termekneve1.setLayoutX(140);
+        termekneve1.setLayoutY(220);
+
+        termekneve2.setLayoutX(140);
+        termekneve2.setLayoutY(340);
+
+        termekhelye.setFill(null);
+        termekhelye.setStroke(Color.GRAY);
+        termekhelye.setStrokeWidth(3);
+
+        termekhelye1.setFill(null);
+        termekhelye1.setStroke(Color.GRAY);
+        termekhelye1.setStrokeWidth(3);
+
+        termekhelye2.setFill(null);
+        termekhelye2.setStroke(Color.GRAY);
+        termekhelye2.setStrokeWidth(3);
+
         layout.getChildren().add(penztarhoz);
+
         layout.getChildren().add(vissza);
 
         layout.getChildren().add(info);
 
+        layout.getChildren().add(eltavolitas);
+        layout.getChildren().add(eltavolitas1);
+        layout.getChildren().add(eltavolitas2);
+
+        layout.getChildren().add(termekhelye);
+        layout.getChildren().add(termekhelye1);
+        layout.getChildren().add(termekhelye2);
+        layout.getChildren().add(termekneve);
+        layout.getChildren().add(termekneve1);
+        layout.getChildren().add(termekneve2);
+
         penztarhoz.setOnAction(cart::handle);
         vissza.setOnAction(cart::handle);
+
     }
 
     public static void handle(ActionEvent actionEvent)
