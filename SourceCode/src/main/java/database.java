@@ -54,26 +54,10 @@ public class database
         }
     }
 
-   public static String Encrypt(String password)
-    {
-        byte[] bytesOfMessage = new byte[0];
-        try
-        {
-            bytesOfMessage = password.getBytes("UTF-8");
-            MessageDigest md = MessageDigest.getInstance("MD5");
-            byte[] thedigest = md.digest(bytesOfMessage);
-            password = thedigest.toString();
-        }
-        catch (UnsupportedEncodingException e)
-        {
-            e.printStackTrace();
-        }
-        catch (NoSuchAlgorithmException e)
-        {
-            e.printStackTrace();
-        }
-        System.out.println(password);
-        return password;
+   public static int Encrypt(String password)
+   {
+       int pw = password.hashCode();
+        return pw;
     }
 
     public static void Kereses()
@@ -153,18 +137,19 @@ public class database
     public static boolean Login()
     {
         String dbusername = "";
-        String dbpassword = "";
+        int dbpassword = 0;
+        int pw = Encrypt(login.jelszoText.getText());
         try {
             st   = conn.createStatement();
             rs   = st.executeQuery("select username, password from users where username like '"+login.felhasznalonevText.getText()
-                    +"' and password like '"+Encrypt(login.jelszoText.getText()+"'"));
+                    +"' and password like '"+pw+"'");
             while(rs.next())
             {
                 dbusername = rs.getString(1);
-                dbpassword = rs.getString(2);
+                dbpassword = rs.getInt(2);
             }
 
-            if(dbusername.equals(login.felhasznalonevText.getText()) && dbpassword.equals(Encrypt(login.jelszoText.getText())))
+            if(dbusername.equals(login.felhasznalonevText.getText()) && dbpassword == pw)
                 return true;
 
             else
@@ -181,7 +166,7 @@ public class database
     {
         String dbusername = registration.felhasznalonevText.getText();
         String dbemail = registration.emailText.getText();
-        String dbpassword = Encrypt(registration.jelszoText.getText());
+        int dbpassword = Encrypt(registration.jelszoText.getText());
         try
         {
             st   = conn.createStatement();
