@@ -9,7 +9,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.scene.paint.Color;
-imporj javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Rectangle;
 
 
 /**

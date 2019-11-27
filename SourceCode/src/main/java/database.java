@@ -56,15 +56,12 @@ public class database
 
    public static String Encrypt(String password)
     {
-        System.out.println("Encrypt1");
         byte[] bytesOfMessage = new byte[0];
         try
         {
-            System.out.println("Encrypt1");
             bytesOfMessage = password.getBytes("UTF-8");
             MessageDigest md = MessageDigest.getInstance("MD5");
             byte[] thedigest = md.digest(bytesOfMessage);
-            System.out.println(thedigest);
             password = thedigest.toString();
         }
         catch (UnsupportedEncodingException e)
@@ -160,14 +157,14 @@ public class database
         try {
             st   = conn.createStatement();
             rs   = st.executeQuery("select username, password from users where username like '"+login.felhasznalonevText.getText()
-                    +"' and password like '"+login.jelszoText.getText()+"'");
+                    +"' and password like '"+Encrypt(login.jelszoText.getText()+"'"));
             while(rs.next())
             {
                 dbusername = rs.getString(1);
                 dbpassword = rs.getString(2);
             }
 
-            if(dbusername.equals(login.felhasznalonevText.getText()) && dbpassword.equals(login.jelszoText.getText()))
+            if(dbusername.equals(login.felhasznalonevText.getText()) && dbpassword.equals(Encrypt(login.jelszoText.getText())))
                 return true;
 
             else
@@ -184,7 +181,7 @@ public class database
     {
         String dbusername = registration.felhasznalonevText.getText();
         String dbemail = registration.emailText.getText();
-        String dbpassword = registration.jelszoText.getText();
+        String dbpassword = Encrypt(registration.jelszoText.getText());
         try
         {
             st   = conn.createStatement();
