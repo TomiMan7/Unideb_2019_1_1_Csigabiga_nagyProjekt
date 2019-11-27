@@ -274,6 +274,7 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
 
         rendezes.setOnAction(this);
         keresesEredmenye.setOnAction(this);
+        aruInfo.setText(database.Encrypt("a"));
     }
 
     @Override

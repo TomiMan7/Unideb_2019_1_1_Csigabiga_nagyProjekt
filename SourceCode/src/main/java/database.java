@@ -1,5 +1,8 @@
 import javafx.scene.control.Alert;
 
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 
 /**
@@ -49,6 +52,31 @@ public class database
         {
             alert("Nem sikerult a kapcsolatot zarni!\n" + e);
         }
+    }
+
+   public static String Encrypt(String password)
+    {
+        System.out.println("Encrypt1");
+        byte[] bytesOfMessage = new byte[0];
+        try
+        {
+            System.out.println("Encrypt1");
+            bytesOfMessage = password.getBytes("UTF-8");
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            byte[] thedigest = md.digest(bytesOfMessage);
+            System.out.println(thedigest);
+            password = thedigest.toString();
+        }
+        catch (UnsupportedEncodingException e)
+        {
+            e.printStackTrace();
+        }
+        catch (NoSuchAlgorithmException e)
+        {
+            e.printStackTrace();
+        }
+        System.out.println(password);
+        return password;
     }
 
     public static void Kereses()
