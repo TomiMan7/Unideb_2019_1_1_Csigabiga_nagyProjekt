@@ -32,7 +32,6 @@ public class mainPageController
 
         else
             database.alert("Tele a kosar!");
-        //mainPage.aruInfo.setText( kosar.elementAt(0).toString() );
     }
 
 }

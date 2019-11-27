@@ -125,6 +125,7 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
         rendezes.setLayoutX(240);
         rendezes.setLayoutY(10);
         rendezes.setPromptText("Eredmény rendezése..");
+        rendezes.getItems().clear();
         rendezes.getItems().addAll("Név szerint növekvő",
                 "Név szerint csökkenő",
                 "Ár szerint növekvő",
@@ -303,6 +304,7 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
         if(actionEvent.getSource() == kosar)
         {
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+            database.KosarFeltoltese(mainPageController.kosar);
             mainPageController.cartShow();
         }
         if(actionEvent.getSource() == kereses)
