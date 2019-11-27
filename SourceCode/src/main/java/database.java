@@ -1,8 +1,5 @@
 import javafx.scene.control.Alert;
 
-import java.io.UnsupportedEncodingException;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 
 /**
@@ -15,6 +12,13 @@ public class database
     static ResultSet  rs = null;
     static Statement  st = null;
     static Connection conn = null;
+
+    private static boolean loggedIn = false;
+
+    public static boolean CheckLoggedInStatus()
+    {
+        return loggedIn;
+    }
 
     public static void alert(String message)
     {
@@ -54,8 +58,8 @@ public class database
         }
     }
 
-   public static int Encrypt(String password)
-   {
+    public static int Encrypt(String password)
+    {
        int pw = password.hashCode();
         return pw;
     }
@@ -150,7 +154,10 @@ public class database
             }
 
             if(dbusername.equals(login.felhasznalonevText.getText()) && dbpassword == pw)
+            {
+                loggedIn = true;
                 return true;
+            }
 
             else
                 return false;

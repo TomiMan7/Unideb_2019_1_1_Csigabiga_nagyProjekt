@@ -26,12 +26,12 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
 
     Label kosarTartalma = new Label("Kosár Tartalma:");
     public static Label bejelentkezettNeve = new Label("Nincs bejelentkezve!");
-    Label talalatokSzama = new Label("Találatok száma:");
-    Label termekadatCikkszam = new Label("Cikkszám:");
-    Label CikkszamLabel = new Label("ASD");
-    Label NevLabel = new Label("ASD");
-    Label ArLabel = new Label("ASD");
-    Label RatingLabel = new Label("ASD");
+    public static Label talalatokSzama = new Label("Találatok száma:");
+    public static Label termekadatCikkszam = new Label("Cikkszám:");
+    public static Label CikkszamLabel = new Label("");
+    public static Label NevLabel = new Label("");
+    public static Label ArLabel = new Label("");
+    public static Label RatingLabel = new Label("");
     Label termekadatNev = new Label("Név:");
     Label termekadatAr = new Label("Ár:");
     Label termekadatRating = new Label("Értékelés:");
@@ -205,6 +205,7 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
         ertekelo5.setLayoutX(910);
         ertekelo5.setLayoutY(170);
         ertekelo5.setToggleGroup(ertekeloGroup);
+        ertekelo5.setSelected(true);
 
         ertekel.setLayoutX(750);
         ertekel.setLayoutY(200);
@@ -281,13 +282,23 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
     {
         if (actionEvent.getSource() == bejelentkezes)
         {
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-            mainPageController.loginShow();
+            if(!database.CheckLoggedInStatus())
+            {
+                ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
+                mainPageController.loginShow();
+            }
+            else
+                database.alert("Mar be van jelentkezve!");
         }
         if(actionEvent.getSource() == vasarlashoz)
         {
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-            mainPageController.cartOverwiewShow();
+            if(database.CheckLoggedInStatus())
+            {
+                ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
+                mainPageController.cartOverwiewShow();
+            }
+            else
+                database.alert("A vasarlashoz elobb jelentkezzen be!");
         }
         if(actionEvent.getSource() == kosar)
         {
@@ -300,7 +311,18 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
         }
         if(actionEvent.getSource() == kosarba)
         {
+            if(database.CheckLoggedInStatus())
             mainPageController.kosarbaTeszem();
+
+            else
+                database.alert("Termek kosarba valo helyezese elott jelentkezzen be!");
+        }
+        if(actionEvent.getSource() == ertekel)
+        {
+            if(database.CheckLoggedInStatus())
+            {}
+            else
+                database.alert("Az ertekeleshez elobb jelentkezzen be!");
         }
     }
 }
