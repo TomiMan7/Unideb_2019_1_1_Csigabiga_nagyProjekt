@@ -42,7 +42,8 @@ public class orderConfirmation
     Label szallitasiModszer = new Label("Szállítási módszer:");
     Label fizetesiModszer = new Label("Fizetési módszer:");
 
-    Label osszeg = new Label("Fizetendő:   Ft");
+    Label osszeg = new Label("Fizetendő(Ft): ");
+    public static Label fizetendo = new Label("     ");
 
 
     public void orderConfirmationShow()
