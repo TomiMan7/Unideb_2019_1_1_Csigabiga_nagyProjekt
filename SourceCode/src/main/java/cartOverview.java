@@ -97,15 +97,23 @@ public class cartOverview
 
         fizetendo.setLayoutX(300);
         fizetendo.setLayoutY(450);
+        vegosszeg.setLayoutX(400);
+        vegosszeg.setLayoutY(450);
 
         osszeg.setLayoutX(140);
         osszeg.setLayoutY(120);
+        ar.setLayoutX(180);
+        ar.setLayoutY(120);
 
         osszeg2.setLayoutX(140);
         osszeg2.setLayoutY(240);
+        ar2.setLayoutX(180);
+        ar2.setLayoutY(240);
 
         osszeg3.setLayoutX(140);
         osszeg3.setLayoutY(360);
+        ar3.setLayoutX(180);
+        ar3.setLayoutY(360);
 
         termekhelye.setFill(null);
         termekhelye.setStroke(Color.GRAY);
@@ -134,10 +142,14 @@ public class cartOverview
         layout.getChildren().add(termekneve1);
         layout.getChildren().add(termekneve2);
         layout.getChildren().add(fizetendo);
+        layout.getChildren().add(vegosszeg);
 
         layout.getChildren().add(osszeg);
         layout.getChildren().add(osszeg2);
         layout.getChildren().add(osszeg3);
+        layout.getChildren().add(ar);
+        layout.getChildren().add(ar2);
+        layout.getChildren().add(ar3);
 
         vasarlas.setOnAction(cartOverview::handle);
         vissza.setOnAction(cartOverview::handle);
