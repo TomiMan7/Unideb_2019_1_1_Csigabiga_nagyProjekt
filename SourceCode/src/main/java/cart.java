@@ -81,27 +81,30 @@ public class cart
         eltavolitas1.setLayoutX(410);
         eltavolitas1.setLayoutY(220);
         eltavolitas1.setPrefWidth(80);
-        eltavolitas.setId("1");
+        eltavolitas1.setId("1");
 
         eltavolitas2.setLayoutX(410);
         eltavolitas2.setLayoutY(340);
         eltavolitas2.setPrefWidth(80);
-        eltavolitas.setId("2");
+        eltavolitas2.setId("2");
 
         termekneve.setLayoutX(140);
         termekneve.setLayoutY(100);
         termekneve1Text.setLayoutX(140);
         termekneve1Text.setLayoutY(120);
+        termekneve1Text.setText("");
 
         termekneve1.setLayoutX(140);
         termekneve1.setLayoutY(220);
         termekneve2Text.setLayoutX(140);
         termekneve2Text.setLayoutY(240);
+        termekneve2Text.setText("");
 
         termekneve2.setLayoutX(140);
         termekneve2.setLayoutY(340);
         termekneve3Text.setLayoutX(140);
         termekneve3Text.setLayoutY(360);
+        termekneve3Text.setText("");
 
         termekhelye.setFill(null);
         termekhelye.setStroke(Color.GRAY);
@@ -137,9 +140,9 @@ public class cart
 
         penztarhoz.setOnAction(cart::handle); //done
         vissza.setOnAction(cart::handle); //done
-        eltavolitas.setOnAction(cart::handle);
-        eltavolitas1.setOnAction(cart::handle);
-        eltavolitas2.setOnAction(cart::handle);
+        eltavolitas.setOnAction(cart::handle); //done
+        eltavolitas1.setOnAction(cart::handle); //done
+        eltavolitas2.setOnAction(cart::handle); //done
 
     }
 

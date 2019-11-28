@@ -279,7 +279,7 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
         kosarba.setOnAction(this); //done
         ertekel.setOnAction(this);
 
-        rendezes.setOnAction(this);
+        rendezes.setOnAction(this); //done
         keresesEredmenye.setOnAction(this);
     }
 
@@ -309,8 +309,9 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
         if(actionEvent.getSource() == kosar)
         {
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-            database.KosarFeltoltese(mainPageController.kosar);
             mainPageController.cartShow();
+            database.KosarFeltoltese(mainPageController.kosar);
+
         }
         if(actionEvent.getSource() == kereses)
         {
@@ -331,5 +332,8 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
             else
                 database.alert("Az ertekeleshez elobb jelentkezzen be!");
         }
+
+        if(actionEvent.getSource() == rendezes)
+            database.Kereses();
     }
 }
