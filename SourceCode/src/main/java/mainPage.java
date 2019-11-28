@@ -304,8 +304,9 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
         if(actionEvent.getSource() == kosar)
         {
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-            database.KosarFeltoltese(mainPageController.kosar);
             mainPageController.cartShow();
+            database.KosarFeltoltese(mainPageController.kosar);
+
         }
         if(actionEvent.getSource() == kereses)
         {
