@@ -274,7 +274,7 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
         kosarba.setOnAction(this); //done
         ertekel.setOnAction(this);
 
-        rendezes.setOnAction(this);
+        rendezes.setOnAction(this); //done
         keresesEredmenye.setOnAction(this);
     }
 
@@ -327,5 +327,8 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
             else
                 database.alert("Az ertekeleshez elobb jelentkezzen be!");
         }
+
+        if(actionEvent.getSource() == rendezes)
+            database.Kereses();
     }
 }
