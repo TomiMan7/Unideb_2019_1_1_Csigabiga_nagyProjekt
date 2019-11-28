@@ -30,8 +30,22 @@ public class cartOverview
     Label termekneve1 = new Label("A termék neve");
     Label termekneve2 = new Label("A termék neve");
 
-    Button eltavolitas = new Button("Eltávolítás");
+    Label osszeg = new Label("Ár(Ft): ");
+    Label osszeg2 = new Label("Ár(Ft) :");
+    Label osszeg3 = new Label("Ár(Ft): ");
 
+    public static Label ar = new Label("      ");
+    public static Label ar2 = new Label("      ");
+    public static Label ar3 = new Label("      ");
+
+    Label fizetendo = new Label("Végösszeg(Ft): ");
+
+    public static Label vegosszeg = new Label("     ");
+
+
+    Button eltavolitas = new Button("Eltávolítás");
+    Button eltavolitas2 = new Button("Eltávolítás");
+    Button eltavolitas3 = new Button("Eltávolítás");
 
     public void cartOverViewShow(){
 
@@ -64,6 +78,14 @@ public class cartOverview
         eltavolitas.setLayoutY(100);
         eltavolitas.setPrefWidth(80);
 
+        eltavolitas2.setLayoutX(410);
+        eltavolitas2.setLayoutY(220);
+        eltavolitas2.setPrefWidth(80);
+
+        eltavolitas3.setLayoutX(410);
+        eltavolitas3.setLayoutY(340);
+        eltavolitas3.setPrefWidth(80);
+
         termekneve.setLayoutX(140);
         termekneve.setLayoutY(100);
 
@@ -72,6 +94,18 @@ public class cartOverview
 
         termekneve2.setLayoutX(140);
         termekneve2.setLayoutY(340);
+
+        fizetendo.setLayoutX(300);
+        fizetendo.setLayoutY(450);
+
+        osszeg.setLayoutX(140);
+        osszeg.setLayoutY(120);
+
+        osszeg2.setLayoutX(140);
+        osszeg2.setLayoutY(240);
+
+        osszeg3.setLayoutX(140);
+        osszeg3.setLayoutY(360);
 
         termekhelye.setFill(null);
         termekhelye.setStroke(Color.GRAY);
@@ -88,6 +122,8 @@ public class cartOverview
         layout.getChildren().add(vasarlas);
         layout.getChildren().add(vissza);
         layout.getChildren().add(eltavolitas);
+        layout.getChildren().add(eltavolitas2);
+        layout.getChildren().add(eltavolitas3);
 
         layout.getChildren().add(veglegesites);
         layout.getChildren().add(ellenorzes);
@@ -97,23 +133,28 @@ public class cartOverview
         layout.getChildren().add(termekneve);
         layout.getChildren().add(termekneve1);
         layout.getChildren().add(termekneve2);
+        layout.getChildren().add(fizetendo);
+
+        layout.getChildren().add(osszeg);
+        layout.getChildren().add(osszeg2);
+        layout.getChildren().add(osszeg3);
 
         vasarlas.setOnAction(cartOverview::handle);
         vissza.setOnAction(cartOverview::handle);
 
     }
-        public static void handle(ActionEvent actionEvent)
+    public static void handle(ActionEvent actionEvent)
+    {
+        if(actionEvent.getSource() == vasarlas)
         {
-            if(actionEvent.getSource() == vasarlas)
-            {
-                ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-                cartOverviewController.personalInfoShow();
-            }
-
-            if(actionEvent.getSource() == vissza )
-            {
-                ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-                cartOverviewController.mainPageShow();
-            }
+            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+            cartOverviewController.personalInfoShow();
         }
+
+        if(actionEvent.getSource() == vissza )
+        {
+            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+            cartOverviewController.mainPageShow();
+        }
+    }
 }
