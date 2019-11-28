@@ -164,6 +164,40 @@ public class database
         }
     }
 
+    public static void KosarVeglegesiteseFeltoltese(Vector kosar)
+    {
+        java.util.List<Label> nevek = new ArrayList<>();
+        java.util.List<Label> arak = new ArrayList<>();
+        int vegosszeg = 0;
+
+        nevek.add(cartOverview.termekneveText);
+        nevek.add(cartOverview.termekneve1Text);
+        nevek.add(cartOverview.termekneve2Text);
+
+        arak.add(cartOverview.ar);
+        arak.add(cartOverview.ar2);
+        arak.add(cartOverview.ar3);
+
+        for(int i = 0; i < kosar.size(); i++)
+        {
+            try {
+                st   = conn.createStatement();
+                rs   = st.executeQuery("select name, price from goods where number like '" +kosar.elementAt(i)+"'");
+                while(rs.next())
+                {
+                    nevek.get(i).setText(rs.getString(1));
+                    arak.get(i).setText(String.valueOf(rs.getInt(2)));
+                    vegosszeg += rs.getInt(2);
+                }
+            }
+            catch (SQLException e)
+            {
+                alert("Nem sikerult a kosar feltoltese!\n" + e);
+            }
+        }
+        cartOverview.vegosszeg.setText(String.valueOf(vegosszeg));
+    }
+
     public static boolean Login()
     {
         String dbusername = "";

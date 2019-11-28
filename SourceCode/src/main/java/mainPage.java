@@ -293,13 +293,14 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
         }
         if(actionEvent.getSource() == vasarlashoz)
         {
-            if(database.CheckLoggedInStatus())
+            if(database.CheckLoggedInStatus() && mainPageController.kosar.size() != 0)
             {
                 ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
                 mainPageController.cartOverwiewShow();
+                database.KosarVeglegesiteseFeltoltese(mainPageController.kosar);
             }
             else
-                database.alert("A vasarlashoz elobb jelentkezzen be!");
+                database.alert("A vasarlashoz elobb jelentkezzen be, vagy tegyen be valamit a kosarba!");
         }
         if(actionEvent.getSource() == kosar)
         {
