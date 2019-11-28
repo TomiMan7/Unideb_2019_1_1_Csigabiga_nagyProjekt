@@ -1,6 +1,9 @@
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.Vector;
 
 /**
  * Ebbe az osztályba kerülnek azok a függvények amik a programhoz
@@ -125,7 +128,7 @@ public class database
 
         try {
             st   = conn.createStatement();
-            rs   = st.executeQuery("select number from goods where "+ type + " like '"+ input +"'");
+            rs   = st.executeQuery("select number from goods where " + type + " like '"+ input +"'");
             while(rs.next())
             {
                 dbnumber = rs.getInt(1);
@@ -136,6 +139,29 @@ public class database
             alert("Nem sikerult a kosarba valo lekerdezes!\n" + e);
         }
         return dbnumber;
+    }
+
+    public static void KosarFeltoltese(Vector kosar)
+    {
+        java.util.List<Label> nevek = new ArrayList<>();
+        nevek.add(cart.termekneve1Text);
+        nevek.add(cart.termekneve2Text);
+        nevek.add(cart.termekneve3Text);
+        for(int i = 0; i < kosar.size(); i++)
+        {
+            try {
+                st   = conn.createStatement();
+                rs   = st.executeQuery("select name from goods where number like '" +kosar.elementAt(i)+"'");
+                while(rs.next())
+                {
+                    nevek.get(i).setText(rs.getString(1));
+                }
+            }
+            catch (SQLException e)
+            {
+                alert("Nem sikerult a kosar feltoltese!\n" + e);
+            }
+        }
     }
 
     public static boolean Login()
