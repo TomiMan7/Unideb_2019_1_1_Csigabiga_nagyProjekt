@@ -30,9 +30,14 @@ public class cart
     Label termekneve1 = new Label("A termék neve");
     Label termekneve2 = new Label("A termék neve");
 
-    Button eltavolitas = new Button("Eltávolítás");
-    Button eltavolitas1 = new Button("Eltávolítás");
-    Button eltavolitas2 = new Button("Eltávolítás");
+    public static Label termekneve1Text = new Label("");
+    public static Label termekneve2Text = new Label("");
+    public static Label termekneve3Text = new Label("");
+
+
+    static Button eltavolitas = new Button("Eltávolítás");
+    static Button eltavolitas1 = new Button("Eltávolítás");
+    static Button eltavolitas2 = new Button("Eltávolítás");
 
 
     public void cartShow()
@@ -71,23 +76,32 @@ public class cart
         eltavolitas.setLayoutX(410);
         eltavolitas.setLayoutY(100);
         eltavolitas.setPrefWidth(80);
+        eltavolitas.setId("0");
 
         eltavolitas1.setLayoutX(410);
         eltavolitas1.setLayoutY(220);
         eltavolitas1.setPrefWidth(80);
+        eltavolitas.setId("1");
 
         eltavolitas2.setLayoutX(410);
         eltavolitas2.setLayoutY(340);
         eltavolitas2.setPrefWidth(80);
+        eltavolitas.setId("2");
 
         termekneve.setLayoutX(140);
         termekneve.setLayoutY(100);
+        termekneve1Text.setLayoutX(140);
+        termekneve1Text.setLayoutY(120);
 
         termekneve1.setLayoutX(140);
         termekneve1.setLayoutY(220);
+        termekneve2Text.setLayoutX(140);
+        termekneve2Text.setLayoutY(240);
 
         termekneve2.setLayoutX(140);
         termekneve2.setLayoutY(340);
+        termekneve3Text.setLayoutX(140);
+        termekneve3Text.setLayoutY(360);
 
         termekhelye.setFill(null);
         termekhelye.setStroke(Color.GRAY);
@@ -117,9 +131,15 @@ public class cart
         layout.getChildren().add(termekneve);
         layout.getChildren().add(termekneve1);
         layout.getChildren().add(termekneve2);
+        layout.getChildren().add(termekneve1Text);
+        layout.getChildren().add(termekneve2Text);
+        layout.getChildren().add(termekneve3Text);
 
-        penztarhoz.setOnAction(cart::handle);
-        vissza.setOnAction(cart::handle);
+        penztarhoz.setOnAction(cart::handle); //done
+        vissza.setOnAction(cart::handle); //done
+        eltavolitas.setOnAction(cart::handle);
+        eltavolitas1.setOnAction(cart::handle);
+        eltavolitas2.setOnAction(cart::handle);
 
     }
 
@@ -135,6 +155,24 @@ public class cart
         {
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
             cartController.mainPageShow();
+        }
+
+        if(actionEvent.getSource() == eltavolitas)
+        {
+                termekneve1Text.setText("");
+                cartController.removeGoodFromCart(eltavolitas.getId());
+        }
+
+        if(actionEvent.getSource() == eltavolitas1)
+        {
+            termekneve2Text.setText("");
+            cartController.removeGoodFromCart(eltavolitas1.getId());
+        }
+
+        if(actionEvent.getSource() == eltavolitas2)
+        {
+            termekneve3Text.setText("");
+            cartController.removeGoodFromCart(eltavolitas2.getId());
         }
     }
 }
