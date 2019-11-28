@@ -99,12 +99,17 @@ public class database
         try {
             st   = conn.createStatement();
             rs   = st.executeQuery("select " + type + " from goods where name like '%"+name+"%' order by " + order);
+
+            int darab = 0;
             while(rs.next())
             {
                 String dbname = rs.getString(1);
 
                 mainPage.keresesEredmenye.getItems().add(dbname);
+
+                darab++;
             }
+            mainPage.talalatokSzamaszam.setText(Integer.toString(darab));
         }
         catch (SQLException e)
         {

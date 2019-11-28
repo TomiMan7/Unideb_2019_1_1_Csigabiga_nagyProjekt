@@ -27,6 +27,7 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
     Label kosarTartalma = new Label("Kosár Tartalma:");
     public static Label bejelentkezettNeve = new Label("Nincs bejelentkezve!");
     public static Label talalatokSzama = new Label("Találatok száma:");
+    public static Label talalatokSzamaszam = new Label();
     public static Label termekadatCikkszam = new Label("Cikkszám:");
     public static Label CikkszamLabel = new Label("");
     public static Label NevLabel = new Label("");
@@ -171,6 +172,9 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
         talalatokSzama.setLayoutX(430);
         talalatokSzama.setLayoutY(280);
 
+        talalatokSzamaszam.setLayoutX(530);
+        talalatokSzamaszam.setLayoutY(280);
+
         aruInfo.setLayoutX(245);
         aruInfo.setLayoutY(320);
         aruInfo.setPrefWidth(490);
@@ -236,6 +240,7 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
         layout.getChildren().add(kosarTartalma);
         layout.getChildren().add(bejelentkezettNeve);
         layout.getChildren().add(talalatokSzama);
+        layout.getChildren().add(talalatokSzamaszam);
         layout.getChildren().add(termekadatCikkszam);
         layout.getChildren().add(CikkszamLabel);
         layout.getChildren().add(termekadatNev);
