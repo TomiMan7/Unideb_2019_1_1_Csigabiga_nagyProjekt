@@ -29,6 +29,5 @@ public class cartController
         {
             database.alert("A kosara mar ures!");
         }
-
     }
 }

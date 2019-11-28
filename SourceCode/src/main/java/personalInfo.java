@@ -123,8 +123,8 @@ public class personalInfo
         layout.getChildren().add(szallitasiModszerBox);
         layout.getChildren().add(fizetesiModszerBox);
 
-        nextPage.setOnAction(personalInfo::handle);
-        vissza.setOnAction(personalInfo::handle);
+        nextPage.setOnAction(personalInfo::handle); //done
+        vissza.setOnAction(personalInfo::handle); //done
     }
 
     public static void handle(ActionEvent actionEvent)

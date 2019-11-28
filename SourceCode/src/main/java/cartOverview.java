@@ -176,9 +176,9 @@ public class cartOverview
 
         vasarlas.setOnAction(cartOverview::handle); //done
         vissza.setOnAction(cartOverview::handle); //done
-        eltavolitas.setOnAction(cartOverview::handle);
-        eltavolitas2.setOnAction(cartOverview::handle);
-        eltavolitas3.setOnAction(cartOverview::handle);
+        eltavolitas.setOnAction(cartOverview::handle); //done
+        eltavolitas2.setOnAction(cartOverview::handle); //done
+        eltavolitas3.setOnAction(cartOverview::handle); //done
     }
 
     public static void handle(ActionEvent actionEvent)

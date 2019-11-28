@@ -16,6 +16,7 @@ public class cartOverviewController
         mainPage mainPage = new mainPage();
         mainPage.mainPageShow();
     }
+
     public static void removeGoodFromCart(String good)
     {
         try
@@ -35,6 +36,5 @@ public class cartOverviewController
             database.alert("A kosara mar ures!");
             cartOverviewController.mainPageShow();
         }
-
     }
 }
