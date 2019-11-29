@@ -194,23 +194,28 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
         ertekelo1.setLayoutX(750);
         ertekelo1.setLayoutY(170);
         ertekelo1.setToggleGroup(ertekeloGroup);
+        ertekelo1.setId("1");
 
         ertekelo2.setLayoutX(790);
         ertekelo2.setLayoutY(170);
         ertekelo2.setToggleGroup(ertekeloGroup);
+        ertekelo2.setId("2");
 
         ertekelo3.setLayoutX(830);
         ertekelo3.setLayoutY(170);
         ertekelo3.setToggleGroup(ertekeloGroup);
+        ertekelo3.setId("3");
 
         ertekelo4.setLayoutX(870);
         ertekelo4.setLayoutY(170);
         ertekelo4.setToggleGroup(ertekeloGroup);
+        ertekelo4.setId("4");
 
         ertekelo5.setLayoutX(910);
         ertekelo5.setLayoutY(170);
         ertekelo5.setToggleGroup(ertekeloGroup);
         ertekelo5.setSelected(true);
+        ertekelo5.setId("5");
 
         ertekel.setLayoutX(750);
         ertekel.setLayoutY(200);
