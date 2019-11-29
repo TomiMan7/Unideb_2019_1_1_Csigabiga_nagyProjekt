@@ -150,8 +150,13 @@ public class cart
     {
         if(actionEvent.getSource() == penztarhoz)
         {
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-            cartController.personalInfoShow();
+            if(mainPageController.kosar.size() != 0)
+            {
+                ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
+                cartController.personalInfoShow();
+            }
+            else
+                database.alert("A vasarlashoz elobb rakjon valamit a kosaraba!");
         }
 
         if(actionEvent.getSource() == vissza)

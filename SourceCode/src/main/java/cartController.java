@@ -17,6 +17,7 @@ public class cartController
 
     public static void removeGoodFromCart(String good)
     {
+        if(Integer.parseInt(good) + 1 <= mainPageController.kosar.size())
         try
         {
             cart.termekneve1Text.setText("");
@@ -27,7 +28,10 @@ public class cartController
         }
         catch (java.lang.ArrayIndexOutOfBoundsException e)
         {
-            database.alert("A kosara mar ures!");
+            //database.KosarVeglegesiteseFeltoltese(mainPageController.kosar);
+            database.alert("Hiba tortent!\n" + e);
         }
+        else if(mainPageController.kosar.size() == 0)
+            database.alert("A kosara mar ures!");
     }
 }

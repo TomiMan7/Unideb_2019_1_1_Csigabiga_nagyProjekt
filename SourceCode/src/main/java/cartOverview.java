@@ -50,11 +50,11 @@ public class cartOverview
     static Button eltavolitas = new Button("Eltávolítás");
     static Button eltavolitas2 = new Button("Eltávolítás");
     static Button eltavolitas3 = new Button("Eltávolítás");
-
-    public void cartOverViewShow()
+    public static Stage primaryStage = new Stage();
+    public void cartOverViewShow(/*Stage primaryStage*/)
     {
 
-        Stage primaryStage = new Stage();
+
         primaryStage.setTitle("The Snail Sale - A kosár véglegesítése");
         primaryStage.setResizable(false);
 
@@ -185,8 +185,17 @@ public class cartOverview
     {
         if(actionEvent.getSource() == vasarlas)
         {
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-            cartOverviewController.personalInfoShow();
+            if(mainPageController.kosar.size() != 0)
+            {
+                ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
+                cartOverviewController.personalInfoShow();
+            }
+            else
+             {
+                 database.alert("A kosara ures!");
+                 ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
+                 cartOverviewController.mainPageShow();
+             }
         }
 
         if(actionEvent.getSource() == vissza )

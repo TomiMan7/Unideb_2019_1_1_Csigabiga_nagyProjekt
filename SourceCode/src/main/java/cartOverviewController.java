@@ -1,3 +1,5 @@
+import javax.swing.*;
+
 /**
  * A cartOverview GUI-hoz tartozo fuggvenyeket tartalmazza.
  */
@@ -19,6 +21,7 @@ public class cartOverviewController
 
     public static void removeGoodFromCart(String good)
     {
+        if(Integer.parseInt(good) + 1 <= mainPageController.kosar.size())
         try
         {
             cartOverview.termekneveText.setText("");
@@ -30,10 +33,23 @@ public class cartOverviewController
 
             mainPageController.kosar.removeElementAt((Integer.parseInt(good)));
             database.KosarVeglegesiteseFeltoltese(mainPageController.kosar);
+
+            CloseCart();
         }
         catch (java.lang.ArrayIndexOutOfBoundsException e)
         {
+            database.alert("Hiba tortent!\n" + e);
+        }
+        else
+            CloseCart();
+    }
+
+    public static void CloseCart()
+    {
+        if(mainPageController.kosar.size() == 0)
+        {
             database.alert("A kosara mar ures!");
+            cartOverview.primaryStage.close();
             cartOverviewController.mainPageShow();
         }
     }
