@@ -256,4 +256,8 @@ public class database
         }
         return true;
     }
+
+    public static boolean personalInfo()
+
+
 }

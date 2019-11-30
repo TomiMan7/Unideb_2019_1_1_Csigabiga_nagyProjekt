@@ -24,10 +24,10 @@ public class personalInfo
     Label szallitasiModszer = new Label("Szállítási módszer:");
     Label fizetesiModszer = new Label("Fizetési módszer:");
 
-    TextField nevText = new TextField();
-    TextField telefonszamText = new TextField();
-    TextField szallitasiCimText = new TextField();
-    TextField emailText = new TextField();
+    static TextField nevText = new TextField();
+    static TextField telefonszamText = new TextField();
+    static TextField szallitasiCimText = new TextField();
+    static TextField emailText = new TextField();
 
     ComboBox szallitasiModszerBox = new ComboBox();
     ComboBox fizetesiModszerBox = new ComboBox();
@@ -43,13 +43,17 @@ public class personalInfo
 
         Pane layout = new Pane();
 
-
         Scene scene = new Scene(layout, 550, 450);
 
 
         primaryStage.setScene(scene);
         primaryStage.show();
 
+        primaryStage.setOnCloseRequest( event ->
+        {
+            primaryStage.close();
+            loginController.mainPageShow();
+        });
 
         info.setLayoutX(100);
         info.setLayoutY(20);
@@ -129,10 +133,12 @@ public class personalInfo
 
     public static void handle(ActionEvent actionEvent)
     {
-        if(actionEvent.getSource() == nextPage)
-        {
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-            personalInfoController.orderConfirmationShow();
+        if(actionEvent.getSource() == nextPage) {
+            if (personalInfoController.personalInfoCheck()) {
+                if (database.personalInfo())
+                    personalInfoController.orderConfirmationShow();
+            } else
+                database.alert("Hiányzó adatok!");
         }
 
         if(actionEvent.getSource() == vissza)
