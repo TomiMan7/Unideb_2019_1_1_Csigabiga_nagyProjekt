@@ -278,8 +278,8 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
         bejelentkezes.setOnAction(this); //done
         vasarlashoz.setOnAction(this); //done
         kereses.setOnAction(this); //done
-        elozo.setOnAction(this);
-        kovetkezo.setOnAction(this);
+        elozo.setOnAction(this); //done
+        kovetkezo.setOnAction(this); //done
         kosar.setOnAction(this); //done
         kosarba.setOnAction(this); //done
         ertekel.setOnAction(this); //done
@@ -350,8 +350,18 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
             else
                 database.alert("Az ertekeleshez elobb jelentkezzen be!");
         }
-
         if(actionEvent.getSource() == rendezes)
             database.Kereses();
+        if(actionEvent.getSource() == elozo)
+        {
+            System.out.println(keresesEredmenye.getSelectionModel().getSelectedIndex());
+            keresesEredmenye.getSelectionModel().selectPrevious();
+        }
+        if(actionEvent.getSource() == kovetkezo)
+        {
+            System.out.println(keresesEredmenye.getSelectionModel().getSelectedIndex());
+            keresesEredmenye.getSelectionModel().selectNext();
+        }
+
     }
 }
