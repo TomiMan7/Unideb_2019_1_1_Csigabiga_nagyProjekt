@@ -335,6 +335,16 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
         {
             if(database.CheckLoggedInStatus())
             {
+                if(ertekelo1.isSelected())
+                    database.setScore(Integer.parseInt(ertekelo1.getId()));
+                if(ertekelo2.isSelected())
+                    database.setScore(Integer.parseInt(ertekelo2.getId()));
+                if(ertekelo3.isSelected())
+                    database.setScore(Integer.parseInt(ertekelo3.getId()));
+                if(ertekelo4.isSelected())
+                    database.setScore(Integer.parseInt(ertekelo4.getId()));
+                if(ertekelo5.isSelected())
+                    database.setScore(Integer.parseInt(ertekelo5.getId()));
 
             }
             else

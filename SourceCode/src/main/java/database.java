@@ -245,16 +245,36 @@ public class database
         return true;
     }
 
-//    public static void setScore()
-//    {
-//        int goodNumber = KosarbaTesz(mainPage.keresesEredmenye.getValue().toString());
-//        try
-//        {
-//            conn.createStatement().executeUpdate("INSERT INTO users (`username`, `email`, `password`) VALUES ('"+dbusername+"', '"+dbemail+"', '"+dbpassword+"')");
-//        }
-//        catch (SQLException e)
-//        {
-//            e.printStackTrace();
-//        }
-//    }
+    public static void setScore(int number)
+    {
+        int goodNumber = KosarbaTesz(mainPage.keresesEredmenye.getValue().toString());
+        int rating = 0;
+        int ratingCount = 0;
+        try
+        {
+            rs   = conn.createStatement().executeQuery("select rating, ratingCount from goods where number like '"+goodNumber+"'");
+            while(rs.next())
+            {
+                rating = rs.getInt(1);
+                ratingCount = rs.getInt(2);
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+
+        rating += number;
+        ratingCount++;
+
+        try
+        {
+            //UPDATE goods SET rating=5, ratingCount=2 WHERE number like 1;
+            conn.createStatement().executeUpdate("UPDATE goods SET rating="+rating+", ratingCount="+ratingCount+" WHERE number like '"+goodNumber+"'");
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+    }
 }

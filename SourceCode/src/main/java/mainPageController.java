@@ -36,10 +36,10 @@ public class mainPageController
             database.alert("Tele a kosar!");
     }
 
-    public static int getErtekeles(Button button)
-    {
-        int score = Integer.parseInt(button.getId());
-
-        return score;
-    }
+//    public static int getErtekeles(Button button)
+//    {
+//        int score = Integer.parseInt(button.getId());
+//
+//        return score;
+//    }
 }
