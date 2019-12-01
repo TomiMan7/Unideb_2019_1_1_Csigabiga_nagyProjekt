@@ -29,8 +29,8 @@ public class personalInfo
     static TextField szallitasiCimText = new TextField();
     static TextField emailText = new TextField();
 
-    ComboBox szallitasiModszerBox = new ComboBox();
-    ComboBox fizetesiModszerBox = new ComboBox();
+    static ComboBox szallitasiModszerBox = new ComboBox();
+    static ComboBox fizetesiModszerBox = new ComboBox();
 
     public void personalInfoShow()
     {
