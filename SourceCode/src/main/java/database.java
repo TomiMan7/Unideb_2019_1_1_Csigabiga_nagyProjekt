@@ -246,6 +246,9 @@ public class database
     }
 
     public static boolean personalInfo()
+    {
+        return true;
+    }
 
 
 }
