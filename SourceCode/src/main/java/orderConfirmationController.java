@@ -18,9 +18,10 @@ public class orderConfirmationController
         personalInfo.personalInfoShow();
     }
 
-    /*Vagy itt lesz v a database-ben attol fuggoen h lesz generalva a string*/
-    public static void trackingNumber()
-    {}
+    public static String trackingNumber()
+    {
+        return String.valueOf((int)System.currentTimeMillis());
+    }
 
     public static void thanks()
     {
