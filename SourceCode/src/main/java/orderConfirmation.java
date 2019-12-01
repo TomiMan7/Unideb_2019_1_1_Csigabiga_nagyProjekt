@@ -201,9 +201,11 @@ public class orderConfirmation
     {
         if(actionEvent.getSource() == fizet)
         {
-            orderConfirmationController.thanks();
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-            orderConfirmationController.mainPageSHow();
+            if(mainPageController.kosar.size() != 0) {
+                orderConfirmationController.thanks();
+                ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
+                orderConfirmationController.mainPageSHow();
+            }
         }
 
         if(actionEvent.getSource() == vissza)

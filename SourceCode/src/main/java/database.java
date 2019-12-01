@@ -204,7 +204,7 @@ public class database
         for(int i = 0; i < kosar.size(); i++)
         {
             try {
-                rs   = conn.createStatement().executeQuery("select name, from goods where number like '" +kosar.elementAt(i)+"'");
+                rs   = conn.createStatement().executeQuery("select name from goods where number like '" +kosar.elementAt(i)+"'");
                 while(rs.next())
                 {
                     nevek.get(i).setText(rs.getString(1));
