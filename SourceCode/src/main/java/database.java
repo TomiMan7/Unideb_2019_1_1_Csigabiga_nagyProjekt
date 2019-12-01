@@ -270,10 +270,16 @@ public class database
         return true;
     }
 
-    public static boolean personalInfo()
-    {
-        return true;
-    }
-
-
+//    public static void setScore()
+//    {
+//        int goodNumber = KosarbaTesz(mainPage.keresesEredmenye.getValue().toString());
+//        try
+//        {
+//            conn.createStatement().executeUpdate("INSERT INTO users (`username`, `email`, `password`) VALUES ('"+dbusername+"', '"+dbemail+"', '"+dbpassword+"')");
+//        }
+//        catch (SQLException e)
+//        {
+//            e.printStackTrace();
+//        }
+//    }
 }

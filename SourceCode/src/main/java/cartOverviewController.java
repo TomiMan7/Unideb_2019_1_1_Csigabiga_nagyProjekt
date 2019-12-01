@@ -1,5 +1,3 @@
-import javax.swing.*;
-
 /**
  * A cartOverview GUI-hoz tartozo fuggvenyeket tartalmazza.
  */
