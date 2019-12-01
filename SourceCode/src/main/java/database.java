@@ -193,6 +193,31 @@ public class database
         cartOverview.vegosszeg.setText(String.valueOf(cartOverviewController.vegosszeg));
     }
 
+    public static void VasarlasVeglegesiteseFeltoltese(Vector kosar)
+    {
+        java.util.List<Label> nevek = new ArrayList<>();
+
+        nevek.add(orderConfirmation.termekneveText);
+        nevek.add(orderConfirmation.termekneve1Text);
+        nevek.add(orderConfirmation.termekneve2Text);
+
+        for(int i = 0; i < kosar.size(); i++)
+        {
+            try {
+                rs   = conn.createStatement().executeQuery("select name, from goods where number like '" +kosar.elementAt(i)+"'");
+                while(rs.next())
+                {
+                    nevek.get(i).setText(rs.getString(1));
+                }
+            }
+            catch (SQLException e)
+            {
+                alert("Nem sikerult a kosar feltoltese!\n" + e);
+            }
+        }
+        orderConfirmation.fizetendo.setText(String.valueOf(cartOverviewController.vegosszeg));
+    }
+
     public static boolean Login()
     {
         String dbusername = "";
