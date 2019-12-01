@@ -21,8 +21,8 @@ public class personalInfoController
         ||personalInfo.telefonszamText.getText().equals("")
         ||personalInfo.szallitasiCimText.getText().equals("")
         ||personalInfo.emailText.getText().equals("")
-        ||personalInfo.szallitasiModszerBox.getValue().equals("Kérem válasszon szállítási módszert!")
-        ||personalInfo.fizetesiModszerBox.getValue().equals("Kérem válasszon fizetési módszert!"))
+        ||personalInfo.szallitasiModszerBox.getPromptText().equals("Kérem válasszon szállítási módszert!")
+        ||personalInfo.fizetesiModszerBox.getPromptText().equals("Kérem válasszon fizetési módszert!"))
             return false;
         else
             return true;
