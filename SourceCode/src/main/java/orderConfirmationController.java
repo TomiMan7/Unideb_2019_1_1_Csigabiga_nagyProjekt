@@ -33,4 +33,22 @@ public class orderConfirmationController
 
         alert.showAndWait();
     }
+
+    public static void pink(String good)
+    {
+        if(Integer.parseInt(good) + 1 <= mainPageController.kosar.size())
+            try
+            {
+                orderConfirmation.termekneveText.setText("");
+                orderConfirmation.termekneve1Text.setText("");
+                orderConfirmation.termekneve2Text.setText("");
+
+                database.VasarlasVeglegesiteseFeltoltese(mainPageController.kosar);
+
+            }
+            catch (java.lang.ArrayIndexOutOfBoundsException e)
+            {
+                database.alert("Hiba tortent!\n" + e);
+            }
+    }
 }
