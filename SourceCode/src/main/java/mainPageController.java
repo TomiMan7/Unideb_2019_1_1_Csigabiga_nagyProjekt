@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.Vector;
 
 /**
@@ -34,4 +35,9 @@ public class mainPageController
             database.alert("Tele a kosar!");
     }
 
+//    public static int getErtekeles(ButtonGroup group)
+//    {
+////        group.get
+////        return score;
+//    }
 }

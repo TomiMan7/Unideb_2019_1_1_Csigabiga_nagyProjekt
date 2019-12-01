@@ -164,7 +164,7 @@ public class database
     {
         java.util.List<Label> nevek = new ArrayList<>();
         java.util.List<Label> arak = new ArrayList<>();
-        int vegosszeg = 0;
+        cartOverviewController.vegosszeg = 0;
 
         nevek.add(cartOverview.termekneveText);
         nevek.add(cartOverview.termekneve1Text);
@@ -182,7 +182,7 @@ public class database
                 {
                     nevek.get(i).setText(rs.getString(1));
                     arak.get(i).setText(String.valueOf(rs.getInt(2)));
-                    vegosszeg += rs.getInt(2);
+                    cartOverviewController.vegosszeg += rs.getInt(2);
                 }
             }
             catch (SQLException e)
@@ -190,7 +190,7 @@ public class database
                 alert("Nem sikerult a kosar feltoltese!\n" + e);
             }
         }
-        cartOverview.vegosszeg.setText(String.valueOf(vegosszeg));
+        cartOverview.vegosszeg.setText(String.valueOf(cartOverviewController.vegosszeg));
     }
 
     public static boolean Login()
