@@ -356,12 +356,16 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
         {
             System.out.println(keresesEredmenye.getSelectionModel().getSelectedIndex());
             keresesEredmenye.getSelectionModel().selectPrevious();
+            RatingLabel.setText(String.valueOf(database.getRating(database.KosarbaTesz(keresesEredmenye.getValue().toString())) ));
         }
         if(actionEvent.getSource() == kovetkezo)
         {
             System.out.println(keresesEredmenye.getSelectionModel().getSelectedIndex());
             keresesEredmenye.getSelectionModel().selectNext();
+            RatingLabel.setText(String.valueOf(database.getRating(database.KosarbaTesz(keresesEredmenye.getValue().toString())) ));
         }
+        if(actionEvent.getSource() == keresesEredmenye)
+            RatingLabel.setText(String.valueOf(database.getRating(database.KosarbaTesz(keresesEredmenye.getValue().toString())) ));
 
     }
 }
