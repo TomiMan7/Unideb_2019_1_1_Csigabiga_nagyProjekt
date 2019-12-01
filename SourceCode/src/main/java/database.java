@@ -215,6 +215,7 @@ public class database
                 alert("Nem sikerult a kosar feltoltese!\n" + e);
             }
         }
+        System.out.println(cartOverviewController.vegosszeg);
         orderConfirmation.fizetendo.setText(String.valueOf(cartOverviewController.vegosszeg));
     }
 
