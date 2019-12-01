@@ -365,7 +365,14 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
             RatingLabel.setText(String.valueOf(database.getRating(database.KosarbaTesz(keresesEredmenye.getValue().toString())) ));
         }
         if(actionEvent.getSource() == keresesEredmenye)
-            RatingLabel.setText(String.valueOf(database.getRating(database.KosarbaTesz(keresesEredmenye.getValue().toString())) ));
+            try
+            {
+                RatingLabel.setText(String.valueOf(database.getRating(database.KosarbaTesz(keresesEredmenye.getValue().toString())) ));
+            }
+        catch (Exception e)
+        {
+
+        }
 
     }
 }

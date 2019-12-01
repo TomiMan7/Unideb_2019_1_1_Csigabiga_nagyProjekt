@@ -90,8 +90,10 @@ public class orderConfirmation
         fizet.setLayoutY(500);
         fizet.setPrefWidth(100);
 
-        osszeg.setLayoutX(280);
+        osszeg.setLayoutX(260);
         osszeg.setLayoutY(505);
+        fizetendo.setLayoutX(340);
+        fizetendo.setLayoutY(505);
 
         termekek.setLayoutX(40);
         termekek.setLayoutY(80);
@@ -186,6 +188,7 @@ public class orderConfirmation
         layout.getChildren().add(email);
         layout.getChildren().add(szallitasiModszer);
         layout.getChildren().add(fizetesiModszer);
+        layout.getChildren().add(fizetendo);
         layout.getChildren().add(name);
         layout.getChildren().add(tsz);
         layout.getChildren().add(szc);

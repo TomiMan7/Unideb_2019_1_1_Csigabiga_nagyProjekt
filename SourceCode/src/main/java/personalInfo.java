@@ -139,6 +139,7 @@ public class personalInfo
             {
                 ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
                 personalInfoController.orderConfirmationShow();
+                database.VasarlasVeglegesiteseFeltoltese(mainPageController.kosar);
             }
             else
                 database.alert("Hiányzó adatok!");
