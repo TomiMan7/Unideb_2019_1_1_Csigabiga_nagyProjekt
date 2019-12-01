@@ -277,4 +277,24 @@ public class database
             e.printStackTrace();
         }
     }
+
+    public static int getRating(int number)
+    {
+        int rating = 0;
+        int ratingCount = 0;
+        try
+        {
+            rs   = conn.createStatement().executeQuery("select rating, ratingCount from goods where number like '"+number+"'");
+            while(rs.next())
+            {
+                rating = rs.getInt(1);
+                ratingCount = rs.getInt(2);
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return (int)rating/ratingCount;
+    }
 }

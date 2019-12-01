@@ -282,7 +282,7 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
         kovetkezo.setOnAction(this);
         kosar.setOnAction(this); //done
         kosarba.setOnAction(this); //done
-        ertekel.setOnAction(this);
+        ertekel.setOnAction(this); //done
 
         rendezes.setOnAction(this); //done
         keresesEredmenye.setOnAction(this);
