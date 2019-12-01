@@ -13,7 +13,6 @@ public class database
 {
     public static String connection = "";
     static ResultSet  rs = null;
-    static Statement  st = null;
     static Connection conn = null;
 
     private static boolean loggedIn = false;
@@ -64,41 +63,35 @@ public class database
     public static int Encrypt(String password)
     {
        int pw = password.hashCode();
-        return pw;
+       return pw;
     }
 
     public static void Kereses()
     {
-        String name = mainPage.keresoSzoveg.getText();
-        String type = "name";
-        String order = "name";
+        final String name = mainPage.keresoSzoveg.getText();
+        final String type;
+        final String order;
 
         mainPage.keresesEredmenye.getItems().clear();
 
-        if(mainPage.nevSzerint.isSelected())
-            type = "name";
-
-        else if(mainPage.arSzerint.isSelected())
+        if(mainPage.arSzerint.isSelected())
             type = "price";
-
         else if(mainPage.ertekelesSzerint.isSelected())
             type = "rating";
+        else
+            type = "name";
 
         if(mainPage.rendezes.getValue() == "Név szerint növekvő")
             order = "name";
-
         else if(mainPage.rendezes.getValue() == "Név szerint csökkenő")
             order = "name desc";
-
         else if(mainPage.rendezes.getValue() == "Ár szerint növekvő")
             order = "price";
-
         else
             order = "price desc";
 
         try {
-            st   = conn.createStatement();
-            rs   = st.executeQuery("select " + type + " from goods where name like '%"+name+"%' order by " + order);
+            rs   = conn.createStatement().executeQuery("select " + type + " from goods where name like '%"+name+"%' order by " + order);
 
             int darab = 0;
             while(rs.next())
@@ -132,8 +125,7 @@ public class database
             type = "rating";
 
         try {
-            st   = conn.createStatement();
-            rs   = st.executeQuery("select number from goods where " + type + " like '"+ input +"'");
+            rs   = conn.createStatement().executeQuery("select number from goods where " + type + " like '"+ input +"'");
             while(rs.next())
             {
                 dbnumber = rs.getInt(1);
@@ -155,8 +147,7 @@ public class database
         for(int i = 0; i < kosar.size(); i++)
         {
             try {
-                st   = conn.createStatement();
-                rs   = st.executeQuery("select name from goods where number like '" +kosar.elementAt(i)+"'");
+                rs   = conn.createStatement().executeQuery("select name from goods where number like '" +kosar.elementAt(i)+"'");
                 while(rs.next())
                 {
                     nevek.get(i).setText(rs.getString(1));
@@ -186,8 +177,7 @@ public class database
         for(int i = 0; i < kosar.size(); i++)
         {
             try {
-                st   = conn.createStatement();
-                rs   = st.executeQuery("select name, price from goods where number like '" +kosar.elementAt(i)+"'");
+                rs   = conn.createStatement().executeQuery("select name, price from goods where number like '" +kosar.elementAt(i)+"'");
                 while(rs.next())
                 {
                     nevek.get(i).setText(rs.getString(1));
@@ -209,8 +199,7 @@ public class database
         int dbpassword = 0;
         int pw = Encrypt(login.jelszoText.getText());
         try {
-            st   = conn.createStatement();
-            rs   = st.executeQuery("select username, password from users where username like '"+login.felhasznalonevText.getText()
+            rs   = conn.createStatement().executeQuery("select username, password from users where username like '"+login.felhasznalonevText.getText()
                     +"' and password like '"+pw+"'");
             while(rs.next())
             {
@@ -236,13 +225,12 @@ public class database
 
     public static boolean registration()
     {
-        String dbusername = registration.felhasznalonevText.getText();
-        String dbemail = registration.emailText.getText();
+        final String dbusername = registration.felhasznalonevText.getText();
+        final String dbemail = registration.emailText.getText();
         int dbpassword = Encrypt(registration.jelszoText.getText());
         try
         {
-            st   = conn.createStatement();
-            st.executeUpdate("INSERT INTO users (`username`, `email`, `password`) VALUES ('"+dbusername+"', '"+dbemail+"', '"+dbpassword+"')");
+            conn.createStatement().executeUpdate("INSERT INTO users (`username`, `email`, `password`) VALUES ('"+dbusername+"', '"+dbemail+"', '"+dbpassword+"')");
         }
         catch (SQLIntegrityConstraintViolationException e)
         {
