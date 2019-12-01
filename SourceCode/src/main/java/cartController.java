@@ -28,7 +28,6 @@ public class cartController
         }
         catch (java.lang.ArrayIndexOutOfBoundsException e)
         {
-            //database.KosarVeglegesiteseFeltoltese(mainPageController.kosar);
             database.alert("Hiba tortent!\n" + e);
         }
         else if(mainPageController.kosar.size() == 0)

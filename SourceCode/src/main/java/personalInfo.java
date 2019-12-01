@@ -133,11 +133,14 @@ public class personalInfo
 
     public static void handle(ActionEvent actionEvent)
     {
-        if(actionEvent.getSource() == nextPage) {
-            if (personalInfoController.personalInfoCheck()) {
-                if (database.personalInfo())
-                    personalInfoController.orderConfirmationShow();
-            } else
+        if(actionEvent.getSource() == nextPage)
+        {
+            if (personalInfoController.personalInfoCheck())
+            {
+                ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
+                personalInfoController.orderConfirmationShow();
+            }
+            else
                 database.alert("Hiányzó adatok!");
         }
 

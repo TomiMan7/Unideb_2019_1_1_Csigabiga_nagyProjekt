@@ -334,7 +334,9 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
         if(actionEvent.getSource() == ertekel)
         {
             if(database.CheckLoggedInStatus())
-            {}
+            {
+
+            }
             else
                 database.alert("Az ertekeleshez elobb jelentkezzen be!");
         }

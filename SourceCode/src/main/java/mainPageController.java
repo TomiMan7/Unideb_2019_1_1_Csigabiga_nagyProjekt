@@ -1,4 +1,5 @@
-import javax.swing.*;
+import javafx.scene.control.Button;
+
 import java.util.Vector;
 
 /**
@@ -35,9 +36,10 @@ public class mainPageController
             database.alert("Tele a kosar!");
     }
 
-//    public static int getErtekeles(ButtonGroup group)
-//    {
-////        group.get
-////        return score;
-//    }
+    public static int getErtekeles(Button button)
+    {
+        int score = Integer.parseInt(button.getId());
+
+        return score;
+    }
 }
