@@ -323,7 +323,6 @@ public class database
         }
         return (int)rating/ratingCount;
     }
-
     public static void setOrder()
     {
         String goods;

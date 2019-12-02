@@ -142,6 +142,7 @@ public class personalInfo
                 personalInfoController.getInfos();
                 orderConfirmationController.setInfos();
                 database.VasarlasVeglegesiteseFeltoltese(mainPageController.kosar);
+
             }
             else
                 database.alert("Hiányzó adatok!");
