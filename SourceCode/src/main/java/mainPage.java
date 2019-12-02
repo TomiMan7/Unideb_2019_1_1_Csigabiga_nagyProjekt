@@ -367,6 +367,7 @@ public class mainPage extends Application implements EventHandler<ActionEvent>
         if(actionEvent.getSource() == keresesEredmenye)
             try
             {
+                database.Kiiras();
                 RatingLabel.setText(String.valueOf(database.getRating(database.KosarbaTesz(keresesEredmenye.getValue().toString())) ));
             }
         catch (Exception e)
