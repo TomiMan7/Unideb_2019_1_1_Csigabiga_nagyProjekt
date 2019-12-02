@@ -110,6 +110,25 @@ public class database
         }
     }
 
+    public static void Kiiras()
+    {
+        int termekid = database.KosarbaTesz((String) mainPage.keresesEredmenye.getValue());
+
+        try {
+            rs   = conn.createStatement().executeQuery("select * from goods where number like '"+termekid+"'");
+            while(rs.next())
+            {
+                mainPage.NevLabel.setText(rs.getString(2));
+                mainPage.ArLabel.setText(Integer.toString(rs.getInt(3)));
+                mainPage.CikkszamLabel.setText(Integer.toString(rs.getInt(1)));
+            }
+        }
+        catch (SQLException e)
+        {
+            alert("Nem sikerult a betoltes!\n" + e);
+        }
+    }
+
     public static int KosarbaTesz(String input)
     {
         int dbnumber = 0;
