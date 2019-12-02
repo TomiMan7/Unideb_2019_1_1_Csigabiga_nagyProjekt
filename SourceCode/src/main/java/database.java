@@ -219,6 +219,9 @@ public class database
         orderConfirmation.fizetendo.setText(String.valueOf(cartOverviewController.vegosszeg));
     }
 
+    public static void SzemelyesAdatokFeltoltese(Vector kosar)
+
+
     public static boolean Login()
     {
         String dbusername = "";
@@ -322,5 +325,19 @@ public class database
             e.printStackTrace();
         }
         return (int)rating/ratingCount;
+    }
+
+    public static void SzemelyesAdatokFeltoltese(Vector kosar)
+    {
+        for(int i = 0; i < kosar.size(); i++)
+        {
+            try {
+                rs   = conn.createStatement().executeQuery("INSERT INTO users (`name`, `phone`, `address`,`email`,`paymentMethod`,`shipMethod`) VALUES ('"+personalInfo.nevText.getText()+"', '"+personalInfo.telefonszamText.getText()+"', '"+personalInfo.szallitasiCimText.getText()+"', '"+personalInfo.emailText.getText()+"', '"+personalInfo.fizetesiModszerBox.getValue()+"', '"+personalInfo.szallitasiModszerBox.getValue()+"')");
+            }
+            catch (SQLException e)
+            {
+                alert("Nem sikerult a kosar feltoltese!\n" + e);
+            }
+        }
     }
 }
