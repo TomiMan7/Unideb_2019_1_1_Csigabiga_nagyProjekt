@@ -3,6 +3,24 @@
  */
 public class personalInfoController
 {
+    public static String name;
+    public static String phone;
+    public static String address;
+    public static String email;
+    public static String delivery;
+    public static String payment;
+
+
+    public static void getInfos()
+    {
+        name = personalInfo.nevText.getText();
+        phone = personalInfo.telefonszamText.getText();
+        address = personalInfo.szallitasiCimText.getText();
+        email = personalInfo.emailText.getText();
+        delivery = personalInfo.szallitasiModszerBox.getValue().toString();
+        payment = personalInfo.fizetesiModszerBox.getValue().toString();
+    }
+
     public static void orderConfirmationShow()
     {
         orderConfirmation orderConfirmation = new orderConfirmation();

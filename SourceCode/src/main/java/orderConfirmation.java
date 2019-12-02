@@ -28,9 +28,9 @@ public class orderConfirmation
     Rectangle termekhelye1 = new Rectangle(40,220,80,80);
     Rectangle termekhelye2= new Rectangle(40, 340, 80, 80);
 
-    Label termekneve = new Label("A termék neve");
-    Label termekneve1 = new Label("A termék neve");
-    Label termekneve2 = new Label("A termék neve");
+    Label termekneve = new Label("A termék neve:");
+    Label termekneve1 = new Label("A termék neve:");
+    Label termekneve2 = new Label("A termék neve:");
     public static Label termekneveText = new Label("");
     public static Label termekneve1Text = new Label("");
     public static Label termekneve2Text = new Label("");
@@ -43,7 +43,7 @@ public class orderConfirmation
     Label nev = new Label("Név:");
     public static Label name = new Label("");
 
-    Label telefonszam = new Label("Telefonszám");
+    Label telefonszam = new Label("Telefonszám:");
     public static Label tsz = new Label("");
 
     Label szallitasiCim = new Label("Szállítási cím:");
@@ -74,7 +74,7 @@ public class orderConfirmation
 
         Pane layout = new Pane();
 
-        Scene scene = new Scene(layout, 550, 600);
+        Scene scene = new Scene(layout, 650, 600);
 
         primaryStage.setScene(scene);
 
@@ -206,8 +206,10 @@ public class orderConfirmation
         {
             if(mainPageController.kosar.size() != 0) {
                 orderConfirmationController.thanks();
+                database.setOrder();
                 ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
                 orderConfirmationController.mainPageSHow();
+                mainPageController.kosar.clear();
             }
         }
 

@@ -139,6 +139,8 @@ public class personalInfo
             {
                 ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
                 personalInfoController.orderConfirmationShow();
+                personalInfoController.getInfos();
+                orderConfirmationController.setInfos();
                 database.VasarlasVeglegesiteseFeltoltese(mainPageController.kosar);
             }
             else

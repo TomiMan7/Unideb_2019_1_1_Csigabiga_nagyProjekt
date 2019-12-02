@@ -323,4 +323,22 @@ public class database
         }
         return (int)rating/ratingCount;
     }
+
+    public static void setOrder()
+    {
+        String goods;
+        goods = orderConfirmation.termekneveText.getText() +","+ orderConfirmation.termekneve1Text.getText() +","+ orderConfirmation.termekneve2Text.getText();
+        try
+        {
+            conn.createStatement().executeUpdate("INSERT INTO orders (`trackingNumber`, `name`, `username` , `phone`, `address`, `email`, `paymentMethod`, `shipmentMethod`, `goods`)" +
+                    " VALUES" +
+                    "('"+Integer.parseInt(orderConfirmationController.trackingnumber)+"', '"+orderConfirmation.name.getText()+"', '"+mainPage.bejelentkezettNeve.getText()+"', '"+orderConfirmation.tsz.getText()+"', '"+orderConfirmation.szc.getText()+"','"+orderConfirmation.ecim.getText()+"'," +
+                    "'"+orderConfirmation.szm.getText()+"','"+orderConfirmation.fm.getText()+"' ,'"+goods+"')");
+
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+    }
 }

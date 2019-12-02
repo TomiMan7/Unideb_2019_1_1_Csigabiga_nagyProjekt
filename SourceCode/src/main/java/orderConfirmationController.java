@@ -5,6 +5,7 @@ import javafx.scene.control.Alert;
  */
 public class orderConfirmationController
 {
+    public static String trackingnumber;
     public static void mainPageSHow()
     {
         mainPage mainPage = new mainPage();
@@ -18,9 +19,19 @@ public class orderConfirmationController
         personalInfo.personalInfoShow();
     }
 
+    public static void setInfos()
+    {
+        orderConfirmation.name.setText(personalInfoController.name);
+        orderConfirmation.tsz.setText(personalInfoController.phone);
+        orderConfirmation.szc.setText(personalInfoController.address);
+        orderConfirmation.ecim.setText(personalInfoController.email);
+        orderConfirmation.szm.setText(personalInfoController.delivery);
+        orderConfirmation.fm.setText(personalInfoController.payment);
+    }
+
     public static String trackingNumber()
     {
-        return String.valueOf((int)System.currentTimeMillis());
+        return trackingnumber = String.valueOf((int)System.currentTimeMillis());
     }
 
     public static void thanks()
@@ -30,7 +41,7 @@ public class orderConfirmationController
         alert.setHeight(200);
         alert.setContentText("Köszönjük a vásárlást! \n Legközelebb is Nálunk vásároljon!" +
                 "\n\nA következő kóddal tudja követni a csomagja helyzetét:\n"
-         + "IDE JON MAJD EGY FUGGVENYHIVAS");
+         + trackingNumber());
 
         alert.showAndWait();
     }
