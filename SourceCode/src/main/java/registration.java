@@ -118,10 +118,7 @@ public class registration
             if(registrationController.registrationChechk())
             {
                 if(database.registration())
-                {
-                    ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
                     registrationController.loginShow();
-                }
             }
             else
                 database.alert("Hianyzo adatok vagy nem egyezo jelszo!");
